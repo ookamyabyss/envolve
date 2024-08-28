@@ -1,0 +1,130 @@
+.carousel-container {
+    position: relative; /* Necessário para o posicionamento absoluto dos botões */
+    width: 70vw; /* Ajuste conforme necessário para o tamanho do carrossel */
+    height: 70vh; /* Ajuste conforme necessário para a altura do carrossel */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa o contêiner */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    align-items: center;
+    justify-content: center;
+    background-color: #282c34;
+    border-top: 10px ridge #ffb000;
+    border-left: 10px groove #ffb000;
+    border-right: 10px ridge #ffb000;
+    border-bottom: 10px groove #ffb000;
+    border-radius: 10px; /* Borda arredondada */
+}
+
+/* Estiliza o título do carrossel */
+.carousel-title {
+    position: absolute;
+    top: 10px; /* Alinha o título no topo do contêiner */
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    font-family: 'Skranji', cursive;
+    color: #ffc000;
+    font-size: 35px; /* Ajuste o tamanho da fonte conforme necessário */
+    font-weight: 400;
+    text-shadow: 0 1px 3px #000;
+    padding: 10px 0;
+    z-index: 1; /* Garante que o título fique acima de outros elementos */
+}
+
+/* Passos do Carrossel */
+.carousel-step {
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #333; /* Cor do texto */
+    background-color: #282c34;
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    margin-top: 40px; /* Adiciona espaço abaixo do título */
+}
+
+/* Contêiner para os botões de navegação */
+.navigation-buttons {
+    position: absolute;
+    bottom: 20px; /* Espaço da parte inferior do carrossel */
+    width: calc(50% - 40px); /* Ajusta a largura para incluir o espaçamento lateral */
+    display: flex;
+    justify-content: space-between; /* Espaça os botões para os lados */
+    padding: 0 20px; /* Espaço nas laterais dos botões */
+}
+
+/* Estilo dos botões de navegação */
+.btn-nav {
+    width: 70px;
+    height: 70px; /* Adiciona altura para os ícones */
+    border-radius: 8px;
+    font-family: 'Skranji', cursive;
+    color: #ffc000;
+    font-size: 25px;
+    font-weight: 400;
+    text-shadow: 0 1px 3px #000;
+    text-align: center;
+    padding: 10px;
+    background: radial-gradient(circle, #8b0000, #8b0000);
+    border-top: 8px ridge #ffb000;
+    border-left: 8px groove #ffb000;
+    border-right: 8px ridge #ffb000;
+    border-bottom: 8px groove #ffb000;
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo dos botões de navegação ao passar o mouse */
+.btn-nav:hover {
+    background: radial-gradient(circle, #e52b2b, #8b0000);
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Estilo dos botões de navegação ao clicar */
+.btn-nav:active {
+    background: radial-gradient(circle, #ec6a6a, #e52b2b);
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Estilo específico para o botão de finalizar */
+.btn-nav.finish {
+    width: 160px;
+    height: 70px; /* Adiciona altura para os ícones */
+    border-radius: 8px;
+    font-family: 'Skranji', cursive;
+    color: #ffc000;
+    font-size: 22px;
+    font-weight: 400;
+    text-shadow: 0 1px 3px #000;
+    text-align: center;
+    padding: 10px;
+    background: radial-gradient(circle, #8b0000, #8b0000);
+    border-top: 8px ridge #ffb000;
+    border-left: 8px groove #ffb000;
+    border-right: 8px ridge #ffb000;
+    border-bottom: 8px groove #ffb000;
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo dos botões de navegação ao passar o mouse para o botão de finalizar */
+.btn-nav.finish:hover {
+    background: radial-gradient(circle, #003300, #003300); /* Escurece o verde ao passar o mouse */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Estilo dos botões de navegação ao clicar para o botão de finalizar */
+.btn-nav.finish:active {
+    background: radial-gradient(circle, #002200, #002200); /* Escurece ainda mais ao clicar */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
+}

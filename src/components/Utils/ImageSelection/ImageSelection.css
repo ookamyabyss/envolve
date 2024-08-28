@@ -1,0 +1,84 @@
+.image-selection-container {
+    text-align: center;
+}
+
+.image-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.selection-image-container {
+    position: relative; /* Necessário para posicionar o balão de chat relativo à imagem */
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-top: 8px ridge #ffb000;
+    border-left: 8px groove #ffb000;
+    border-right: 8px ridge #ffb000;
+    border-bottom: 8px groove #ffb000;
+    box-shadow: 
+        inset 0px 0px 7px 4px rgba(0, 0, 0, 0.4),
+        0px 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-sizing: border-box;
+}
+
+.selection-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.selection-image-container:hover {
+    transform: scale(1.1);
+    border-radius: 10px;
+    box-shadow: 
+        inset 0px 0px 10px 6px rgba(0, 0, 0, 0.5),
+        0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.message-box {
+    font-family: 'Skranji', cursive;
+    color: #ffc000;
+    font-size: 35px;
+    font-weight: 400;
+    text-shadow: 0 1px 3px #000;
+    text-align: center;
+    padding: 5px 0;
+    margin-top: -20px;
+}
+
+/* Estilização do balão de chat */
+.chat-bubble {
+    position: absolute;
+    top: -40px; /* Ajuste a posição vertical do balão */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 2px solid #ffb000;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+}
+
+.chat-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}

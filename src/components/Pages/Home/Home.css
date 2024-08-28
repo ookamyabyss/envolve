@@ -1,0 +1,11 @@
+/* src/components/Pages/Home/Home.css */
+.home {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
