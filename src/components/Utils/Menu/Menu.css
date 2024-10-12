@@ -1,59 +1,3 @@
-<<<<<<< HEAD
-/* Importando a fonte Skranji */
-@import url('https://fonts.googleapis.com/css2?family=Skranji&display=swap');
-
-/* Estilo do título no botão */
-.btn-home {
-    font-family: 'Skranji', cursive;
-    color: #ffc000;
-    font-size: 40px;
-    font-weight: 400;
-    text-shadow: 0 1px 3px #000;
-    text-align: center;
-}
-
-/* Estilo do menu */
-.menu {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 450px;
-}
-
-/* Estilo do botão principal */
-.btn-home {
-    margin: 10px auto;
-    width: 250px;
-    letter-spacing: 2px;
-    border-radius: 8px;
-    font-family: 'Skranji', cursive;
-    color: #ffc000;
-    font-size: 25px;
-    font-weight: 400;
-    text-shadow: 0 1px 3px #000;
-    text-align: center;
-    padding: 10px 0;
-    background: radial-gradient(circle, #8b0000, #8b0000);
-    border-top: 8px ridge #ffb000;
-    border-left: 8px groove #ffb000;
-    border-right: 8px ridge #ffb000;
-    border-bottom: 8px groove #ffb000;
-    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-/* Estilo do botão ao passar o mouse */
-.btn-home:hover {
-    background: radial-gradient(circle, #e52b2b, #8b0000);
-    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
-}
-
-/* Estilo do botão quando é clicado */
-.btn-home:active {
-    background: radial-gradient(circle, #ec6a6a, #e52b2b);
-    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
-=======
 /* Importando a fonte Skranji do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Skranji&display=swap');
 
@@ -108,5 +52,4 @@
 .btn-home:active {
     background: radial-gradient(circle, #ec6a6a, #e52b2b); /* Gradiente de fundo alterado quando clicado */
     box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa alterada quando clicado */
->>>>>>> menu
 }

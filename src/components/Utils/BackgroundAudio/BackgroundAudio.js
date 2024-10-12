@@ -1,16 +1,10 @@
 import React from 'react';
-<<<<<<< HEAD
-=======
 // Importa o arquivo de áudio que será usado como fundo
->>>>>>> menu
 import backgrondMenu from '../../../assets/sounds/backgrondMenu.mp3';
 
 const BackgroundAudio = () => {
     return (
         <div>
-<<<<<<< HEAD
-            <audio id="background-audio" src={backgrondMenu} autoPlay loop />
-=======
             {/* 
                 Componente de áudio para tocar música de fundo
                 - id: 'background-audio' é usado para identificação do elemento
@@ -24,14 +18,8 @@ const BackgroundAudio = () => {
                 autoPlay 
                 loop 
             />
->>>>>>> menu
         </div>
     );
 };
 
-<<<<<<< HEAD
-
 export default BackgroundAudio;
-=======
-export default BackgroundAudio;
->>>>>>> menu

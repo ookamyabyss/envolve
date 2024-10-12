@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import './Options.css'; // Verifique se o arquivo está presente
-import BackButton from '../../Utils/BackButton/BackButton';
-
-
-const Options = () => {
-    return (
-        <div className="options-container">
-            <h1>Opções</h1>
-            
-            <BackButton />
-=======
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import clickSound from '../../../assets/sounds/click.mp3';
@@ -129,7 +116,6 @@ const Options = () => {
                 </div>
             )}
 
->>>>>>> menu
         </div>
     );
 };

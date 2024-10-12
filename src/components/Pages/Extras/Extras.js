@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import './Extras.css'; // Verifique se o arquivo está presente
-import BackButton from '../../Utils/BackButton/BackButton';
-
-
-const Extras = () => {
-    return (
-        <div className="extras-container">
-            <h1>Extras</h1>
-
-            <BackButton />
-            
-=======
 import { useNavigate } from 'react-router-dom';
 import clickSound from '../../../assets/sounds/click.mp3';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -48,16 +34,9 @@ const Extra = () => {
                     <FontAwesomeIcon icon={faArrowLeft} />
                 </button>
             </div>
-
-
-
->>>>>>> menu
         </div>
     );
 };
 
-<<<<<<< HEAD
-export default Extras;
-=======
 export default Extra;
->>>>>>> menu
+

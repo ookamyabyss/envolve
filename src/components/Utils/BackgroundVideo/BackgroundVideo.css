@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-/* BackgroundVideo.css */
-#background-video {
-    position: fixed; /* Fica fixo na tela */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Faz o vídeo cobrir a área sem distorcer */
-    z-index: -1; /* Fica atrás de outros elementos */
-=======
 /* Estilo para o vídeo de fundo */
 #background-video {
     position: fixed; /* Fixa o vídeo na tela */
@@ -18,5 +7,4 @@
     height: 100%; /* Faz o vídeo ocupar toda a altura da tela */
     object-fit: cover; /* Faz o vídeo cobrir a área sem distorcer */
     z-index: -1; /* Coloca o vídeo atrás de outros elementos */
->>>>>>> menu
 }

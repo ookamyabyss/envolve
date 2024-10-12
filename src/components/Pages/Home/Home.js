@@ -1,21 +1,10 @@
-<<<<<<< HEAD
-import React from 'react';
-=======
 import React, { useState, useEffect } from 'react';
 
 // Importação de componentes utilitários para o layout da página Home
->>>>>>> menu
 import BackgroundVideo from '../../Utils/BackgroundVideo/BackgroundVideo';
 import Menu from '../../Utils/Menu/Menu';
 import FloatingMenu from '../../Utils/FloatingMenu/FloatingMenu';
 import FullScreenButton from '../../Utils/FullScreenButton/FullScreenButton';
-<<<<<<< HEAD
-
-const Home = () => {
-    return (
-        <div className="Home">
-            <BackgroundVideo />
-=======
 import GameTitle from '../../Utils/GameTitle/GameTitle';
 import starImage from '../../../assets/stars/star.png'; // Caminho da imagem da estrela
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -123,8 +112,7 @@ const Home = () => {
                 <p>{totalStars}</p>
                 <img src={starImage} alt="Estrela" className="star-hub" />
             </div>
-    
->>>>>>> menu
+
             <Menu />
             <FloatingMenu />
             <FullScreenButton />

@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-/* src/components/Pages/Home/Home.css */
-.home {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.container {
-    position: relative;
-    z-index: 1;
-}
-=======
 .hub {
     position: fixed;
     top: 20px;
@@ -181,4 +168,3 @@
     margin: transparent
     
 }
->>>>>>> menu
