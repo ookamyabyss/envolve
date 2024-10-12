@@ -1,21 +1,13 @@
-<<<<<<< HEAD
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-=======
 import React from 'react'; // Importa a biblioteca React
 import { Routes, Route } from 'react-router-dom'; // Importa os componentes 'Routes' e 'Route' do React Router para gerenciamento de rotas
 
 // Importa os componentes das páginas principais
->>>>>>> menu
 import Home from './components/Pages/Home/Home'; 
 import Options from './components/Pages/Options/Options'; 
 import Extras from './components/Pages/Extras/Extras'; 
 import HowToPlay from './components/Pages/HowToPlay/HowToPlay'; 
 import TutorialPage from './components/Pages/TutorialPage/TutorialPage';
 import ChallengeModeSelection from './components/Pages/ChallengeModeSelection/ChallengeModeSelection';  
-<<<<<<< HEAD
-
-=======
 import FirstMode from './components/Pages/FirstMode/FirstMode';
 import SecondMode from './components/Pages/SecondMode/SecondMode';
 import ThirdMode from './components/Pages/ThirdMode/ThirdMode';
@@ -55,20 +47,10 @@ import ThirdModeSevenLevel from './components/Pages/ThirdModeLevels/SevenLevel/S
 import ThirdModeEightLevel from './components/Pages/ThirdModeLevels/EightLevel/EightLevel';
 import ThirdModeNineLevel from './components/Pages/ThirdModeLevels/NineLevel/NineLevel';
 import ThirdModeTenLevel from './components/Pages/ThirdModeLevels/TenLevel/TenLevel';
->>>>>>> menu
 
 const AppRoutes = () => {
     return (
         <Routes>
-<<<<<<< HEAD
-            <Route path="/tutorial" element={<TutorialPage />} />
-
-            <Route path="/" element={<Home />} />
-            <Route path="/options" element={<Options />} />
-            <Route path="/extras" element={<Extras />} />
-            <Route path="/how-to-play" element={<HowToPlay />} />
-            <Route path="/challenge-mode-selection" element={<ChallengeModeSelection />} />
-=======
             {/* Define a rota para a página do tutorial */}
             <Route path="/tutorial" element={<TutorialPage />} />
 
@@ -133,13 +115,9 @@ const AppRoutes = () => {
             <Route path="/third-mode-level/10" element={<ThirdModeTenLevel />} />
 
             {/* Adicione rotas para outros níveis conforme necessário */}
->>>>>>> menu
         </Routes>
     );
 };
 
-<<<<<<< HEAD
-export default AppRoutes;
-=======
 export default AppRoutes; // Exporta o componente AppRoutes para uso em outras partes da aplicação
->>>>>>> menu
+

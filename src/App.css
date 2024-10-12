@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-.App {
-  text-align: center;
-}
-
-=======
-/* App.css */
-
 /* Estiliza a aplicação para ocupar a tela inteira sem rolagem */
 .App {
   text-align: center;
@@ -18,45 +10,13 @@
 }
 
 /* Define a altura do logo e desativa eventos de ponteiro */
->>>>>>> menu
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-<<<<<<< HEAD
-=======
-/* Animação do logo quando a preferência de movimento reduzido não é definida */
->>>>>>> menu
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-<<<<<<< HEAD
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-=======
 /* Estiliza o cabeçalho da aplicação */
 .App-header {
   background-color: #282c34; /* Cor de fundo escura */
@@ -81,6 +41,5 @@
   }
   to {
     transform: rotate(360deg); /* Completa uma rotação de 360 graus */
->>>>>>> menu
   }
 }

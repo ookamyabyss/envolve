@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import AppRoutes from './AppRoutes';
-import BackgroundAudio from './components/Utils/BackgroundAudio/BackgroundAudio';
-
-const App = () => {
-    return (
-        <div className="App">
-            <BackgroundAudio />
-=======
 import React from 'react'; // Importa o React
 import { BrowserRouter as Router } from 'react-router-dom'; // Importa o Router do React Router
 import AppRoutes from './AppRoutes'; // Importa as rotas definidas em AppRoutes
@@ -22,7 +11,6 @@ const App = () => {
             <BackgroundAudio />
 
             {/* Configura o roteamento da aplicação */}
->>>>>>> menu
             <Router>
                 <AppRoutes />
             </Router>
@@ -30,8 +18,4 @@ const App = () => {
     );
 };
 
-<<<<<<< HEAD
-export default App;
-=======
 export default App; // Exporta o componente App como padrão
->>>>>>> menu
