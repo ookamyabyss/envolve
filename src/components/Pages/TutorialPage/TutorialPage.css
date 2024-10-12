@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .tutorial-container {
     position: relative;
     height: 100vh;
@@ -49,3 +50,111 @@
 .close-button:focus {
     outline: none;
 }
+=======
+/* Estilização do contêiner principal da página de tutorial */
+.tutorial-container {
+    position: relative;         /* Define a posição relativa para ajustar outros elementos dentro do contêiner */
+    height: 100vh;              /* Define a altura do contêiner como 100% da altura da janela */
+    width: 100vw;               /* Define a largura do contêiner como 100% da largura da janela */
+    display: flex;              /* Utiliza o Flexbox para organizar o layout */
+    justify-content: center;    /* Centraliza horizontalmente o conteúdo */
+    align-items: center;        /* Centraliza verticalmente o conteúdo */
+}
+
+/* Estilização da mensagem de desabilitar o tutorial */
+.disable-message {
+    position: fixed;            /* Fixa a mensagem em um local da tela, independentemente do scroll */
+    top: 20px;                  /* Posiciona a mensagem 20px a partir do topo da página */
+    right: 20px;                /* Posiciona a mensagem 20px à direita da página */
+    background-color: #fff;     /* Define a cor de fundo branca para a mensagem */
+    border: 2px solid #ffb000;  /* Aplica uma borda laranja ao redor da mensagem */
+    border-radius: 8px;         /* Arredonda os cantos da caixa da mensagem */
+    padding: 15px;              /* Adiciona espaçamento interno ao redor do conteúdo da mensagem */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Aplica uma sombra ao redor da caixa para destacá-la */
+    z-index: 1000;              /* Garante que a mensagem fique sobre outros elementos da página */
+}
+
+/* Estilização do parágrafo dentro da mensagem de desabilitar */
+.disable-message p {
+    margin: 0 0 10px 0;         /* Remove as margens superiores e inferiores, exceto 10px na margem inferior */
+}
+
+/* Estilização do checkbox dentro da mensagem de desabilitar */
+.disable-message input {
+    margin-right: 10px;         /* Adiciona espaço de 10px à direita do checkbox */
+}
+
+/* Estilização do botão de fechar a mensagem de desabilitar */
+.close-button {
+    background-color: #ffb000;  /* Define a cor de fundo do botão como laranja */
+    border: none;               /* Remove a borda padrão do botão */
+    color: white;               /* Define a cor do texto do botão como branca */
+    font-size: 16px;            /* Define o tamanho da fonte do botão */
+    border-radius: 50%;         /* Torna o botão circular */
+    width: 30px;                /* Define a largura do botão */
+    height: 30px;               /* Define a altura do botão */
+    cursor: pointer;            /* Altera o cursor para pointer, indicando que o botão é clicável */
+    display: flex;              /* Utiliza Flexbox para centralizar o conteúdo do botão */
+    align-items: center;        /* Centraliza o conteúdo verticalmente */
+    justify-content: center;    /* Centraliza o conteúdo horizontalmente */
+}
+
+/* Efeito hover (quando o mouse está sobre o botão) */
+.close-button:hover {
+    background-color: #e5a500;  /* Altera a cor de fundo do botão ao passar o mouse */
+}
+
+/* Remove o contorno padrão ao focar no botão */
+.close-button:focus {
+    outline: none;
+}
+
+.btn-tutorial {
+    margin: 1rem auto; /* Usando rem em vez de px */
+    width: 75px; /* Usando % da largura da viewport */
+    letter-spacing: 0.1rem; /* Usando rem para espaçamento de letras */
+    border-radius: 0.5rem; /* Usando rem para o raio da borda */
+    font-family: 'Skranji', cursive;
+    color: #ffc000;
+    font-size: 1.6rem; /* Ajuste proporcional da fonte */
+    font-weight: 400;
+    text-shadow: 0 0.1rem 0.2rem #000;
+    text-align: center;
+    padding: 0.8rem 0; /* Ajuste proporcional no padding */
+    background: radial-gradient(circle, #8b0000, #8b0000);
+    border-top: 0.5rem ridge #ffb000; /* Ajuste proporcional na borda */
+    border-left: 0.5rem groove #ffb000;
+    border-right: 0.5rem ridge #ffb000;
+    border-bottom: 0.5rem groove #ffb000;
+    box-shadow: inset 0 0 0.3rem 0.2rem rgba(1, 1, 1, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-tutorial:hover {
+    background: radial-gradient(circle, #e52b2b, #8b0000);
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
+}
+
+.btn-tutorial:active {
+    background: radial-gradient(circle, #ec6a6a, #e52b2b);
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
+}
+
+.back-tutorial {
+    position: fixed; /* Fixado na tela */
+    bottom: 20px;
+    left: 20px; /* Alinhado à esquerda */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens à esquerda */
+}
+
+.back-tutorial button {
+    margin: 0.2em 0;
+}
+
+.back-tutorial .btn-tutorial {
+    margin-bottom: 0.5em; /* Ajuste o espaço entre o botão de toggle e o menu */
+}
+>>>>>>> menu

@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
     font-family: Arial, sans-serif;
     background-color: #282c34;
     color: white;
@@ -26,3 +27,20 @@ body {
     margin: 0;
     position: relative;
 }
+=======
+    font-family: Arial, sans-serif; /* Define a família de fontes como Arial, com uma fonte alternativa sans-serif */
+    background-color: #282c34; /* Define a cor de fundo como um tom escuro (#282c34) */
+    color: white; /* Define a cor do texto como branco */
+    display: flex; /* Usa Flexbox para o layout do conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 100vh; /* Define a altura do corpo como 100% da altura da janela de visualização */
+    margin: 0; /* Remove a margem padrão ao redor do corpo */
+    position: relative; /* Define a posição relativa do corpo, útil para posicionamento absoluto de elementos filhos */
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; /* Define a família de fontes para elementos de código, com várias fontes monoespaçadas */
+}
+
+>>>>>>> menu

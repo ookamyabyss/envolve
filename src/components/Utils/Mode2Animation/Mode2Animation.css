@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee'); /* Importa a fonte 'Bungee' do Google Fonts */
+
+/* Estilos para o container principal da animação do modo 1 */
+.mode1-container {
+    text-align: center; /* Centraliza o conteúdo textualmente */
+    padding: 1px; /* Adiciona um pequeno espaçamento ao redor do grid */
+}
+
+/* Estilos para o grid que contém os itens da animação */
+.mode1-grid {
+    display: grid; /* Usa o display grid para organizar os itens */
+    grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas com largura igual */
+    grid-gap: 2px; /* Define o espaço entre os itens como 2px */
+    justify-content: center; /* Centraliza o grid horizontalmente */
+    align-items: center; /* Centraliza o grid verticalmente */
+}
+
+/* Estilos para cada container de item individual na animação */
+.mode1-item-container {
+    font-family: 'Bungee', cursive; /* Define a fonte Bungee para o texto dos itens */
+    position: relative; /* Define a posição relativa para possíveis ajustes de posicionamento interno */
+    width: 60px; /* Define a largura dos itens como 60px */
+    height: 60px; /* Define a altura dos itens como 60px */
+    background-color: white; /* Define a cor de fundo como branco */
+    border-top: 6px solid #ffb000; /* Define a borda superior com 6px de espessura e cor #ffb000 */
+    border-left: 6px solid #ffb000; /* Define a borda esquerda */
+    border-right: 6px solid #ffb000; /* Define a borda direita */
+    border-bottom: 6px solid #ffb000; /* Define a borda inferior */
+    box-shadow: 
+        inset 0px 0px 5px rgba(0, 0, 0, 0.4), /* Sombra interna com 5px de desfoque */
+        0px 3px 8px rgba(0, 0, 0, 0.2); /* Sombra externa com 3px de deslocamento vertical e 8px de desfoque */
+    display: flex; /* Usa o flexbox para alinhar o conteúdo dentro do item */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    margin: 4px; /* Define uma margem de 4px ao redor de cada item */
+    transition: border-color 0.5s ease; /* Anima a mudança de cor da borda suavemente ao longo de 0.5 segundos */
+}
+
+/* Estilos para o texto dentro de cada item */
+.mode1-item-text {
+    font-size: 2rem; /* Define o tamanho da fonte do texto como 2rem */
+    font-weight: bold; /* Define a fonte como negrito */
+    color: #ffb000; /* Define a cor do texto como #ffb000 */
+}
+
+/* Estilo aplicado ao container de item quando ele está destacado com a cor verde */
+.mode1-item-container.highlighted-green {
+    border-color: lime; /* Muda a cor da borda para verde */
+}
+
+/* Estilo aplicado ao container de item quando ele está destacado com a cor vermelha */
+.mode1-item-container.highlighted-red {
+    border-color: red; /* Muda a cor da borda para vermelho */
+}

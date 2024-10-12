@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .btn-screen {
     margin: 10px auto;
@@ -58,3 +59,71 @@
     margin-bottom: 0.5em; /* Ajuste o espaço entre o botão de toggle e o menu */
 }
 
+=======
+/* Estilo para o botão de tela cheia */
+.btn-screen {
+    margin: 10px auto; /* Margem superior e inferior de 10px, centralizado horizontalmente */
+    width: 70px; /* Largura do botão */
+    letter-spacing: 2px; /* Espaçamento entre as letras */
+    border-radius: 8px; /* Bordas arredondadas do botão */
+    font-family: 'Skranji', cursive; /* Fonte usada no botão */
+    color: #ffc000; /* Cor do texto do botão */
+    font-size: 25px; /* Tamanho da fonte do texto */
+    font-weight: 400; /* Peso da fonte */
+    text-shadow: 0 1px 3px #000; /* Sombra do texto para dar profundidade */
+    text-align: center; /* Alinhamento do texto no centro do botão */
+    padding: 10px 0; /* Espaçamento interno (padding) superior e inferior de 10px */
+    background: radial-gradient(circle, #8b0000, #8b0000); /* Gradiente radial de fundo do botão */
+    border-top: 8px ridge #ffb000; /* Borda superior do botão */
+    border-left: 8px groove #ffb000; /* Borda esquerda do botão */
+    border-right: 8px ridge #ffb000; /* Borda direita do botão */
+    border-bottom: 8px groove #ffb000; /* Borda inferior do botão */
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3); /* Sombra interna do botão */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transição suave para alterações de cor de fundo e sombra */
+}
+
+/* Estilo para o botão de tela cheia quando o mouse está sobre ele */
+.btn-screen:hover {
+    background: radial-gradient(circle, #e52b2b, #8b0000); /* Alteração do gradiente radial ao passar o mouse */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Alteração da sombra para um efeito mais destacado */
+}
+
+/* Estilo para o botão de tela cheia quando pressionado */
+.btn-screen:active {
+    background: radial-gradient(circle, #ec6a6a, #e52b2b); /* Alteração do gradiente radial quando o botão é pressionado */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Alteração da sombra para um efeito mais destacado */
+}
+
+/* Estilo para o contêiner do menu flutuante */
+.menu-screen {
+    position: fixed; /* Fixado na tela para que não se mova ao rolar */
+    bottom: 20px; /* Alinhado 20px do fundo da tela */
+    left: 20px; /* Alinhado 20px da borda esquerda da tela */
+    display: flex; /* Exibe os itens como flex container */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: flex-start; /* Alinha os itens à esquerda do contêiner */
+}
+
+/* Estilo para os botões dentro do contêiner do menu */
+.menu-screen button {
+    margin: 0.2em 0; /* Margem superior e inferior de 0.2em para os botões */
+}
+
+/* Estilo para esconder elementos */
+.hidden {
+    display: none; /* Oculta o elemento */
+}
+
+/* Estilo para exibir elementos */
+.visible {
+    display: flex; /* Exibe o elemento como flex container */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: flex-start; /* Alinha os itens à esquerda do contêiner */
+}
+
+/* Estilo para o botão de tela cheia no contêiner do menu */
+.menu-screen .btn-screen {
+    margin-bottom: 0.5em; /* Margem inferior de 0.5em para separar o botão de outros elementos */
+}
+>>>>>>> menu

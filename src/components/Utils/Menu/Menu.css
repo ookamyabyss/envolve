@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Importando a fonte Skranji */
 @import url('https://fonts.googleapis.com/css2?family=Skranji&display=swap');
 
@@ -52,4 +53,60 @@
 .btn-home:active {
     background: radial-gradient(circle, #ec6a6a, #e52b2b);
     box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
+=======
+/* Importando a fonte Skranji do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Skranji&display=swap');
+
+/* Estilo geral para o botão principal */
+.btn-home {
+    font-family: 'Skranji', cursive; /* Fonte personalizada para o texto do botão */
+    color: #ffc000; /* Cor do texto do botão */
+    font-size: 40px; /* Tamanho da fonte do texto do botão */
+    font-weight: 400; /* Peso da fonte do texto do botão */
+    text-shadow: 0 1px 3px #000; /* Sombra do texto para destacar o botão */
+    text-align: center; /* Alinhamento do texto no centro do botão */
+}
+
+/* Estilo do container do menu */
+.menu {
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: column; /* Alinha os botões verticalmente */
+    text-align: center; /* Alinha o texto dos botões no centro do container */
+    margin-top: 450px; /* Margem superior para posicionar o menu na tela */
+}
+
+/* Estilo detalhado do botão principal */
+.btn-home {
+    margin: 10px auto; /* Margem automática para centralizar horizontalmente e margem de 10px acima e abaixo */
+    width: 250px; /* Largura fixa do botão */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    border-radius: 8px; /* Bordas arredondadas do botão */
+    font-family: 'Skranji', cursive; /* Fonte personalizada para o texto do botão */
+    color: #ffc000; /* Cor do texto do botão */
+    font-size: 25px; /* Tamanho da fonte do texto do botão */
+    font-weight: 400; /* Peso da fonte do texto do botão */
+    text-shadow: 0 1px 3px #000; /* Sombra do texto para destaque adicional */
+    text-align: center; /* Alinhamento do texto no centro do botão */
+    padding: 10px 0; /* Espaçamento interno vertical do botão */
+    background: radial-gradient(circle, #8b0000, #8b0000); /* Gradiente de fundo radial do botão */
+    border-top: 8px ridge #ffb000; /* Borda superior com estilo ridge */
+    border-left: 8px groove #ffb000; /* Borda esquerda com estilo groove */
+    border-right: 8px ridge #ffb000; /* Borda direita com estilo ridge */
+    border-bottom: 8px groove #ffb000; /* Borda inferior com estilo groove */
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3); /* Sombra interna do botão */
+    cursor: pointer; /* Cursor indicando que o botão é clicável */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transições suaves para cor de fundo e sombra ao interagir com o botão */
+}
+
+/* Estilo do botão ao passar o mouse sobre ele */
+.btn-home:hover {
+    background: radial-gradient(circle, #e52b2b, #8b0000); /* Gradiente de fundo alterado ao passar o mouse */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa alterada ao passar o mouse */
+}
+
+/* Estilo do botão quando clicado */
+.btn-home:active {
+    background: radial-gradient(circle, #ec6a6a, #e52b2b); /* Gradiente de fundo alterado quando clicado */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa alterada quando clicado */
+>>>>>>> menu
 }

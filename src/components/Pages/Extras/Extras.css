@@ -1,0 +1,75 @@
+/* Importa a fonte "Bungee" do Google Fonts para uso nos títulos e textos */
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+
+/* Remove as margens e o padding padrão do HTML e body */
+/* Define a altura de 100% para ocupar toda a viewport e remove a rolagem */
+html, body {
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding padrão */
+    height: 100%; /* Define a altura para 100% da viewport */
+    overflow: hidden; /* Remove a rolagem da página */
+}
+
+/* Estilo para o contêiner principal da página, que ocupa toda a tela */
+/* Alinha o conteúdo ao centro da tela vertical e horizontalmente */
+.level-container {
+    display: flex; /* Usa flexbox para alinhar os elementos */
+    flex-direction: column; /* Alinha os filhos na vertical */
+    justify-content: center; /* Centraliza os filhos verticalmente */
+    align-items: center; /* Centraliza os filhos horizontalmente */
+    height: 100vh; /* Ocupa 100% da altura da viewport */
+    width: 100vw; /* Ocupa 100% da largura da viewport */
+    background-size: cover; /* A imagem de fundo cobre todo o contêiner */
+    background-position: center; /* Centraliza a imagem de fundo */
+}
+
+/* Estilo para o contêiner das opções, centralizando o conteúdo */
+.extras-container {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Alinha os filhos na vertical */
+    align-items: center; /* Centraliza os filhos horizontalmente */
+}
+
+/* Estilização do título principal da página de opções */
+.extras-container h1 {
+    font-family: 'Bungee', cursive; /* Usa a fonte 'Bungee' */
+    color: #ffb000; /* Define a cor do texto em laranja */
+    text-shadow: 2px 2px 0 #000; /* Aplica uma sombra preta para destacar o texto */
+}
+
+/* Estilização do subtítulo "Troca Nome" */
+.extras-container h3 {
+    font-family: 'Bungee', cursive; /* Usa a fonte 'Bungee' */
+    font-size: 35px; /* Aumenta o tamanho da fonte */
+    color: #ffb000; /* Define a cor do texto em laranja */
+    text-shadow: 
+        1px 1px 0 #000,    /* Contorno preto fino no topo e esquerda */
+        1px -1px 0 #000,  /* Contorno preto fino na parte inferior e direita */
+        1px -1px 0 #000,   /* Contorno preto fino na diagonal superior direita */
+        -2px 2px 0 #000,   /* Contorno preto fino na diagonal inferior esquerda */
+        2px 2px 2px rgba(0, 0, 0, 0.6); /* Sombra adicional para efeito de profundidade */
+    margin-bottom: 20px; /* Adiciona um espaçamento inferior */
+    letter-spacing: 5px; /* Espaçamento entre letras */
+
+}
+
+
+/* Estilização do menu de navegação para o botão de voltar */
+.extras-back-menu {
+    position: fixed; /* Fixa o menu no local definido */
+    bottom: 20px; /* Posiciona a 20px do fundo da página */
+    left: 20px; /* Posiciona a 20px do lado esquerdo da página */
+}
+
+/* Estilo do botão de voltar */
+.extras-btn-back {
+    width: 70px; /* Define a largura do botão */
+    padding: 10px; /* Adiciona espaçamento interno */
+    font-family: 'Skranji', cursive; /* Usa a fonte 'Skranji' */
+    font-size: 25px; /* Define o tamanho da fonte */
+    color: #ffc000; /* Define a cor do texto em dourado */
+    background: radial-gradient(circle, #8b0000, #8b0000); /* Gradiente de fundo com vermelho escuro */
+    border: 8px ridge #ffb000; /* Define uma borda com estilo 'ridge' em dourado */
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3); /* Sombra interna para profundidade */
+    cursor: pointer; /* Define o cursor como pointer ao passar sobre o botão */
+}

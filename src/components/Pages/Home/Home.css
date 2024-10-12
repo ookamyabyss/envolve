@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* src/components/Pages/Home/Home.css */
 .home {
     position: relative;
@@ -9,3 +10,175 @@
     position: relative;
     z-index: 1;
 }
+=======
+.hub {
+    position: fixed;
+    top: 20px;
+    right: 65px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow:
+        1px 1px 0 #000,    
+        1px -1px 0 #000,   
+        1px -1px 0 #000,   
+        -2px 2px 0 #000,   
+        2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hub .name-container {
+    display: flex;
+    flex-direction: column; /* Alinha o nome e o "LEVEL" em coluna */
+    margin-right: 30px;
+}
+
+.hub p {
+    font-family: 'Bungee', cursive;
+    font-size: 35px;
+    letter-spacing: 8px;
+    color: #FFC000;
+    text-shadow: 
+        1px 1px 0 #000,    
+        1px -1px 0 #000,   
+        1px -1px 0 #000,   
+        -2px 2px 0 #000,   
+        2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.hub h1 {
+    font-family: 'Bungee', cursive;
+    font-size: 35px;
+    letter-spacing: 8px;
+    color: #ffc000;
+    text-shadow: 
+        1px 1px 0 #000,    
+        1px -1px 0 #000,   
+        1px -1px 0 #000,   
+        -2px 2px 0 #000,   
+        2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.hub .name-container h2 {
+    font-family: 'Bungee', cursive;
+    font-size: 30px;
+    letter-spacing: 8px;
+    color: white;
+    text-shadow: 
+        2px 2px 0 #000,    
+        2px -2px 0 #000,   
+        2px -2px 0 #000,   
+        -2px 2px 0 #000,   
+        4px 4px 6px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    margin: 0;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.hub .level {
+    margin-top: 0; 
+    font-size: 0.8rem; 
+    text-align: center;
+    color: #333; 
+}
+
+.star-hub {
+    width: 60px; /* Tamanho da estrela */
+    height: auto;
+    margin-left: 10px; /* Espaçamento entre o texto e a estrela */
+    transition: transform 0.3s ease;
+}
+
+.star-hub:hover {
+    transform: scale(1.2);
+}
+
+.name-input-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: #fff;
+    border-top: 8px ridge #ffb000;
+    border-left: 8px groove #ffb000;
+    border-right: 8px ridge #ffb000;
+    border-bottom: 8px groove #ffb000;
+    z-index: 1000;
+    width: 120%;
+    max-width: 600px;
+    backdrop-filter: blur(10px);
+    background: rgba(40, 44, 52, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    gap: 0px; /* Define um espaçamento de 10px entre o input e o botão */
+
+}
+
+.name-input-popup h2 {
+    font-family: 'bungee', sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    letter-spacing: 6px;
+    color: #ffc000;
+    text-shadow: 
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        1px -1px 0 #000,
+        -3px 3px 0 #000,
+        3px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+.name-input-popup input {
+    font-size: 1.5rem; /* Define o tamanho da fonte */
+    padding: 10px; /* Adiciona um espaçamento interno */
+    border: 6px solid white; /* Define uma borda branca de 6px */
+    box-shadow: 
+        inset 0px 0px 7px 4px rgba(0, 0, 0, 0.4), /* Sombra interna para profundidade */
+        0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra externa leve */
+    border-radius: 0; /* Remove o arredondamento das bordas */
+    width: 250px; /* Define a largura do input */
+    color: black; /* Define a cor do texto dentro do input */
+    text-align: center; /* Centraliza o texto dentro do input */
+    font-family: 'Bungee', cursive; /* Usa a fonte 'Bungee' */
+    background-color: #fff; /* Define o fundo do input como branco */
+    margin-right: 15px; /* Adiciona espaço entre o input e o botão OK */
+
+}
+
+.name-input-popup button {
+    width: 70px; /* Define a largura do botão */
+    padding: 10px; /* Adiciona espaçamento interno */
+    font-family: 'Bungee', cursive; /* Usa a fonte 'Bungee' */
+    font-size: 25px; /* Define o tamanho da fonte */
+    color: #ffc000; /* Define a cor do texto em dourado */
+    background: radial-gradient(circle, #8b0000, #8b0000); /* Gradiente de fundo com vermelho escuro */
+    border: 6px solid #ffb000; /* Define uma borda branca de 6px */
+    cursor: pointer; /* Define o cursor como pointer (mãozinha) ao passar sobre o botão */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transição suave ao mudar de cor ou sombra */
+}
+
+.name-input-popup  .close-button-3 {
+    font-family: 'Ariel', cursive;
+    position: absolute; /* Fica posicionado em relação à div pai */
+    top: -4px; /* Distância do topo */
+    right: -4px; /* Distância da direita */
+    font-size: 40px; /* Tamanho do X */
+    color: red; /* Cor do X */
+    background: transparent; /* Remove fundo */
+    border: 0px; /* Remove borda */
+    cursor: pointer; /* Cursor de mão */
+    margin: transparent
+    
+}
+>>>>>>> menu

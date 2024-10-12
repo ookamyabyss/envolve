@@ -1,0 +1,115 @@
+/* Container principal do tutorial de digitação */
+.typing-tutorial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  color: #ffb000;
+
+  position: relative; /* Permite posicionamento absoluto do balão */
+  margin-top: -60px; /* Exemplo de margem superior negativa */
+
+}
+
+/* Texto de instrução */
+
+
+/* Destaque para a palavra SUCESSO */
+.typing-tutorial-container .highlight {
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+/* Estilização do campo de entrada de texto */
+.typing-input {
+  font-size: 1.5rem;
+  padding: 10px;
+  border: 8px solid white;
+  box-shadow: 
+  inset 0px 0px 7px 4px rgba(0, 0, 0, 0.4), /* Sombra interna para efeito de profundidade */
+  0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra externa para efeito de profundidade */
+  border-radius: 0px;
+  width: 400px;
+  color: black;
+  text-align: center;
+  font-family: 'Bungee', cursive;
+  background-color: #fff;
+  margin-top: 10px; /* Ajusta o espaçamento superior */
+  position: relative;
+}
+
+.typing-input.success {
+  border-color: lime; /* Borda verde quando a palavra correta é digitada */
+}
+
+.typing-tutorial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  color: #ffb000;
+  font-family: 'Skranji', cursive;
+}
+
+/* Estilização do campo de entrada e do balão */
+.input-container {
+  position: relative; /* Para posicionar o balão em relação ao campo de digitação */
+}
+
+/* Estilização do balão de chat */
+.chat-bubble {
+  position: absolute; /* Posiciona o balão de forma absoluta em relação ao contêiner da imagem */
+  top: -55px; /* Ajusta a posição vertical do balão */
+  left: 100%; /* Centraliza o balão horizontalmente */
+  transform: translateX(-50%); /* Ajusta o alinhamento horizontal */
+  background-color: white; /* Cor de fundo do balão */
+  border: 4px solid #ffb000; /* Borda do balão */
+  border-radius: 0px; /* Arredonda os cantos do balão */
+  padding: 10px; /* Espaçamento interno dentro do balão */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ao redor do balão */
+  font-family: 'Bungee', cursive; /* Define a fonte usada no título */
+  font-size: 20px; /* Tamanho da fonte */
+  color: black; /* Cor do texto */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+}
+
+/* Triângulo que aponta para o balão de chat */
+.chat-bubble::after {
+  content: ''; /* Necessário para criar o triângulo */
+  position: absolute; /* Posiciona o triângulo de forma absoluta dentro do balão */
+  bottom: -10px; /* Ajusta a posição vertical do triângulo */
+  left: 50%; /* Centraliza o triângulo horizontalmente */
+  transform: translateX(-50%); /* Ajusta o alinhamento horizontal */
+  border-width: 10px; /* Define a largura das bordas do triângulo */
+  border-style: solid; /* Estilo sólido para as bordas */
+  border-color: white transparent transparent transparent; /* Define as cores das bordas do triângulo */
+}
+
+.message-box-4 {
+  font-family: 'Bungee', cursive; /* Define a fonte usada no título */
+  color: #ffc000; /* Cor do texto */
+  font-size: 35px; /* Tamanho da fonte */
+  font-weight: 400; /* Peso da fonte */
+  text-shadow: 0 1px 3px #000; /* Sombra no texto para destaque */
+  text-align: center; /* Centraliza o texto dentro da caixa */
+  padding: 2px 0; /* Espaçamento interno acima e abaixo do texto */
+  margin-top: -30px; /* Margem negativa para ajustar a posição vertical da caixa */
+  margin: 10px 0;
+}
+
+.message-box-3 {
+  font-family: 'Bungee', cursive; /* Define a fonte usada no título */
+  color: #00FC00; /* Cor do texto */
+  font-size: 35px; /* Tamanho da fonte */
+  font-weight: 400; /* Peso da fonte */
+  text-shadow: 0 1px 3px #000; /* Sombra no texto para destaque */
+  text-align: center; /* Centraliza o texto dentro da caixa */
+  padding: 2px 0; /* Espaçamento interno acima e abaixo do texto */
+  margin-top: -30px; /* Margem negativa para ajustar a posição vertical da caixa */
+  margin: 10px 0;
+}

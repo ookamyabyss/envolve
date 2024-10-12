@@ -1,0 +1,45 @@
+.mode1-container {
+    text-align: center;
+    padding: 1px; /* Espaçamento ao redor do grid */
+}
+
+.mode1-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Define uma grade com 4 colunas de largura igual */
+    grid-gap: 2px; /* Espaçamento entre os itens da grade foi reduzido para combinar com o tamanho dos itens */
+    justify-content: center; /* Centraliza horizontalmente os itens no grid */
+    align-items: center; /* Centraliza verticalmente os itens no grid */
+}
+
+.mode1-item-container {
+    position: relative; /* Posição relativa para permitir a aplicação de sombras e bordas */
+    width: 60px; /* Define a largura dos itens como 60px */
+    height: 60px; /* Define a altura dos itens como 60px */
+    background-color: white; /* Cor de fundo dos itens é branca */
+    border-top: 6px solid #ffb000; /* Define uma borda superior de 6px com cor específica */
+    border-left: 6px solid #ffb000; /* Define uma borda esquerda de 6px com cor específica */
+    border-right: 6px solid #ffb000; /* Define uma borda direita de 6px com cor específica */
+    border-bottom: 6px solid #ffb000; /* Define uma borda inferior de 6px com cor específica */
+    box-shadow: 
+        inset 0px 0px 5px rgba(0, 0, 0, 0.4), /* Sombra interna para profundidade */
+        0px 3px 8px rgba(0, 0, 0, 0.2); /* Sombra externa para destacar os itens */
+    display: flex; /* Usa flexbox para alinhar o conteúdo dentro dos itens */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    margin: 4px; /* Define uma margem ao redor dos itens */
+    transition: border-color 0.5s ease; /* Transição suave na cor da borda ao mudar */
+}
+
+.mode1-item-container.highlighted-green {
+    border-color: lime; /* Aplica a cor verde nas bordas quando o item está destacado */
+}
+
+.mode1-item-container.highlighted-red {
+    border-color: red; /* Aplica a cor vermelha nas bordas quando o item está próximo a ser destacado */
+}
+
+.mode1-item-image {
+    max-width: 100%; /* Limita a largura da imagem ao máximo do container sem distorcer */
+    max-height: 100%; /* Limita a altura da imagem ao máximo do container sem distorcer */
+    object-fit: contain; /* Garante que a imagem se ajuste ao container sem cortar nem distorcer */
+}

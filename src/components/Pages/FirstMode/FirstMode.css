@@ -1,0 +1,66 @@
+/* Estilo para o botão de voltar */
+.btn-back {
+    margin: 10px auto; /* Centraliza horizontalmente com uma margem superior e inferior */
+    width: 70px; /* Define a largura do botão */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    border-radius: 8px; /* Arredonda os cantos do botão */
+    font-family: 'Skranji', cursive; /* Define a fonte do texto */
+    color: #ffc000; /* Cor do texto */
+    font-size: 25px; /* Tamanho da fonte */
+    font-weight: 400; /* Peso da fonte */
+    text-shadow: 0 1px 3px #000; /* Sombra do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px 0; /* Preenchimento vertical do botão */
+    background: radial-gradient(circle, #8b0000, #8b0000); /* Gradiente de fundo do botão */
+    border-top: 8px ridge #ffb000; /* Borda superior com estilo ridge */
+    border-left: 8px groove #ffb000; /* Borda esquerda com estilo groove */
+    border-right: 8px ridge #ffb000; /* Borda direita com estilo ridge */
+    border-bottom: 8px groove #ffb000; /* Borda inferior com estilo groove */
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3); /* Sombra interna do botão */
+    cursor: pointer; /* Cursor do mouse em forma de mão */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transições suaves para mudanças de cor e sombra */
+}
+
+/* Estilo do botão de voltar quando o cursor está sobre ele */
+.btn-back:hover {
+    background: radial-gradient(circle, #e52b2b, #8b0000); /* Gradiente de fundo alterado ao passar o cursor */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa ampliada ao passar o cursor */
+}
+
+/* Estilo do botão de voltar quando está sendo clicado */
+.btn-back:active {
+    background: radial-gradient(circle, #ec6a6a, #e52b2b); /* Gradiente de fundo alterado ao clicar */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa ampliada ao clicar */
+}
+
+/* Estilo para o contêiner do menu de navegação */
+.back-menu {
+    position: fixed; /* Fixa o menu na tela */
+    bottom: 20px; /* Alinha o menu 20px do fundo da tela */
+    left: 20px; /* Alinha o menu 20px da esquerda da tela */
+    display: flex; /* Exibe o contêiner como flexbox */
+    flex-direction: column; /* Alinha os itens em uma coluna */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+}
+
+/* Estilo para os botões dentro do menu de navegação */
+.back-menu button {
+    margin: 0.2em 0; /* Margem superior e inferior entre os botões */
+}
+
+/* Classe para esconder elementos */
+.hidden {
+    display: none; /* Oculta o elemento */
+}
+
+/* Classe para mostrar elementos como flexbox */
+.visible {
+    display: flex; /* Exibe o elemento como flexbox */
+    flex-direction: column; /* Alinha os itens em uma coluna */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+}
+
+/* Estilo específico para o botão de voltar dentro do menu */
+.back-menu .btn-back {
+    margin-bottom: 0.5em; /* Ajusta o espaço abaixo do botão de voltar */
+}

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee'); /* Importa a fonte 'Bungee' do Google Fonts */
+
+/* Container principal da animação */
+.mode1-container {
+    text-align: center;
+    padding: 1px;
+}
+
+/* Grid para organizar os itens */
+.mode1-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas de mesmo tamanho */
+    grid-gap: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cada container de item na animação */
+.mode1-item-container {
+    font-family: 'Bungee', cursive;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border: 6px solid #ffb000;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.4), 0px 3px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    transition: border-color 0.5s ease;
+}
+
+/* Estilos para as formas geométricas */
+.shape-quadrado {
+    width: 40px;
+    height: 40px;
+    background-color: lawngreen;
+}
+
+.shape-triangulo {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid cyan;
+}
+
+.shape-circulo {
+    width: 40px;
+    height: 40px;
+    background-color: gold;
+    border-radius: 50%;
+}
+
+.shape-retangulo {
+    width: 40px;
+    height: 30px;
+    background-color: red;
+}
+
+.shape-losango {
+    width: 30px;
+    height: 30px;
+    background-color: darkmagenta;
+    transform: rotate(45deg);
+}
+
+.shape-hexagono {
+    width: 40px;
+    height: 40px;
+    background-color: pink;
+    clip-path: polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%);
+}
+
+.shape-pentagono {
+    width: 40px;
+    height: 40px;
+    background-color: pink;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.shape-trapezio {
+    width: 40px;
+    height: 30px;
+    background-color: orangered;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+}
+
+/* Destacar borda dos itens em verde ou vermelho */
+.mode1-item-container.highlighted-green {
+    border-color: lime
+}
+
+.mode1-item-container.highlighted-red {
+    border-color: red;
+}
+

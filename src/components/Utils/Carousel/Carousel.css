@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* Contêiner principal do carrossel */
+>>>>>>> menu
 .carousel-container {
     position: relative; /* Necessário para o posicionamento absoluto dos botões */
     width: 70vw; /* Ajuste conforme necessário para o tamanho do carrossel */
@@ -8,16 +12,25 @@
     flex-direction: column; /* Organiza os elementos em coluna */
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     background-color: #282c34;
     border-top: 10px ridge #ffb000;
     border-left: 10px groove #ffb000;
     border-right: 10px ridge #ffb000;
     border-bottom: 10px groove #ffb000;
     border-radius: 10px; /* Borda arredondada */
+=======
+    border: 10px ridge #ffb000; /* Borda uniforme em todos os lados */
+    border-radius: 10px; /* Borda arredondada */
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+    background: rgba(40, 44, 52, 0.7); /* Cor de fundo com transparência */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidade com Webkit */
+>>>>>>> menu
 }
 
 /* Estiliza o título do carrossel */
 .carousel-title {
+<<<<<<< HEAD
     position: absolute;
     top: 10px; /* Alinha o título no topo do contêiner */
     width: 100%; /* Ocupa toda a largura do contêiner */
@@ -28,12 +41,25 @@
     font-weight: 400;
     text-shadow: 0 1px 3px #000;
     padding: 10px 0;
+=======
+    position: absolute; /* Posiciona o título acima de outros elementos */
+    top: 10px; /* Alinha o título no topo do contêiner */
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    font-family: 'Skranji', cursive; /* Fonte do título */
+    color: #ffc000; /* Cor do texto */
+    font-size: 35px; /* Ajuste o tamanho da fonte conforme necessário */
+    font-weight: 400;
+    text-shadow: 0 1px 3px #000; /* Sombra do texto */
+    padding: 5px 0; /* Espaço acima e abaixo do texto */
+>>>>>>> menu
     z-index: 1; /* Garante que o título fique acima de outros elementos */
 }
 
 /* Passos do Carrossel */
 .carousel-step {
     width: 100%; /* Ocupa toda a largura do contêiner */
+<<<<<<< HEAD
     height: 100%;
     display: flex;
     align-items: center;
@@ -50,12 +76,31 @@
     position: absolute;
     bottom: 20px; /* Espaço da parte inferior do carrossel */
     width: calc(50% - 40px); /* Ajusta a largura para incluir o espaçamento lateral */
+=======
+    height: 100%; /* Ocupa toda a altura do contêiner */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    font-size: 1.5em; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #333; /* Cor do texto */
+    background-color: #282c34; /* Cor de fundo */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    margin-top: 5px; /* Adiciona espaço abaixo do título */
+}
+
+/* Contêiner para os botões de navegação */
+.tutorial-navigation-buttons {
+    position: absolute; /* Posiciona os botões na parte inferior do carrossel */
+    bottom: 5px; /* Espaço da parte inferior do carrossel */
+    width: calc(50% - 20px); /* Ajusta a largura para incluir o espaçamento lateral */
+>>>>>>> menu
     display: flex;
     justify-content: space-between; /* Espaça os botões para os lados */
     padding: 0 20px; /* Espaço nas laterais dos botões */
 }
 
 /* Estilo dos botões de navegação */
+<<<<<<< HEAD
 .btn-nav {
     width: 70px;
     height: 70px; /* Adiciona altura para os ícones */
@@ -127,4 +172,68 @@
 .btn-nav.finish:active {
     background: radial-gradient(circle, #002200, #002200); /* Escurece ainda mais ao clicar */
     box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
+=======
+.btn-tutorial-nav {
+    margin: 1rem auto; /* Usando rem em vez de px */
+    width: 75px; /* Usando % da largura da viewport */
+    letter-spacing: 0.1rem; /* Usando rem para espaçamento de letras */
+    border-radius: 0.5rem; /* Usando rem para o raio da borda */
+    font-family: 'Skranji', cursive;
+    color: #ffc000;
+    font-size: 1.6rem; /* Ajuste proporcional da fonte */
+    font-weight: 400;
+    text-shadow: 0 0.1rem 0.2rem #000;
+    text-align: center;
+    padding: 0.8rem 0; /* Ajuste proporcional no padding */
+    background: radial-gradient(circle, #8b0000, #8b0000);
+    border-top: 0.5rem ridge #ffb000; /* Ajuste proporcional na borda */
+    border-left: 0.5rem groove #ffb000;
+    border-right: 0.5rem ridge #ffb000;
+    border-bottom: 0.5rem groove #ffb000;
+    box-shadow: inset 0 0 0.3rem 0.2rem rgba(1, 1, 1, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+/* Estilo dos botões de navegação ao passar o mouse */
+.btn-tutorial-nav:hover {
+    background: radial-gradient(circle, #e52b2b, #8b0000); /* Escurece o gradiente ao passar o mouse */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa ao passar o mouse */
+}
+/* Estilo dos botões de navegação ao clicar */
+.btn-tutorial-nav:active {
+    background: radial-gradient(circle, #ec6a6a, #e52b2b); /* Escurece ainda mais ao clicar */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa ao clicar */
+}
+/* Estilo específico para o botão de finalizar */
+.btn-tutorial-fim {
+    margin: 1rem auto; /* Usando rem em vez de px */
+    width: 75px; /* Usando % da largura da viewport */
+    letter-spacing: 0.1rem; /* Usando rem para espaçamento de letras */
+    border-radius: 0.5rem; /* Usando rem para o raio da borda */
+    font-family: 'Skranji', cursive;
+    color: #ffc000;
+    font-size: 1.6rem; /* Ajuste proporcional da fonte */
+    font-weight: 400;
+    text-shadow: 0 0.1rem 0.2rem #000;
+    text-align: center;
+    padding: 0.8rem 0; /* Ajuste proporcional no padding */
+    background: radial-gradient(circle, #8b0000, #8b0000);
+    border-top: 0.5rem ridge #ffb000; /* Ajuste proporcional na borda */
+    border-left: 0.5rem groove #ffb000;
+    border-right: 0.5rem ridge #ffb000;
+    border-bottom: 0.5rem groove #ffb000;
+    box-shadow: inset 0 0 0.3rem 0.2rem rgba(1, 1, 1, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+/* Estilo dos botões de finalizar ao passar o mouse */
+.btn-tutorial-fim:hover {
+    background: radial-gradient(circle, #003300, #003300); /* Escurece o verde ao passar o mouse */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa ao passar o mouse */
+}
+/* Estilo dos botões de finalizar ao clicar */
+.btn-tutorial-fim:active {
+    background: radial-gradient(circle, #002200, #002200); /* Escurece ainda mais ao clicar */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa ao clicar */
+>>>>>>> menu
 }

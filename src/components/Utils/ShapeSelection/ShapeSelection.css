@@ -1,0 +1,233 @@
+/* Container principal para a seleção */
+.container {
+    display: flex;
+    flex-direction: column; /* Alinha os itens em coluna */
+    justify-content: flex-start; /* Move os itens para o topo */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    margin-top: -20px; /* Ajusta a margem superior para mover tudo para cima */
+    padding: 0; /* Remove qualquer padding, caso exista */
+}
+
+/* Container que inclui a grid de formas e as instruções */
+.selection-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Grid que exibe as formas geométricas */
+.image-grid-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 400px; /* Largura fixa para 3 formas por linha */
+}
+
+
+/* Container principal para a seleção de imagens */
+.image-selection-container {
+    text-align: center; /* Centraliza o texto dentro do container */
+    margin-top: -60px; /* Exemplo de margem superior negativa */
+}
+
+/* Grid que exibe as imagens de seleção */
+.image-grid-3 {
+    display: flex; /* Usa flexbox para layout */
+    justify-content: center; /* Centraliza as imagens horizontalmente */
+    align-items: center; /* Centraliza as imagens verticalmente */
+    flex-wrap: wrap; /* Permite que as imagens se movam para a linha seguinte se necessário */
+}
+
+/* Contêiner individual para cada imagem de seleção */
+.selection-image-container {
+    position: relative; /* Necessário para posicionar o balão de chat relativo à imagem */
+    width: 100px; /* Define a largura do contêiner da imagem */
+    height: 100px; /* Define a altura do contêiner da imagem */
+    background-color: white; /* Cor de fundo do contêiner */
+    border: 8px solid transparent; /* Borda padrão transparente */
+    box-shadow: 
+        inset 0px 0px 7px 4px rgba(0, 0, 0, 0.4), /* Sombra interna para efeito de profundidade */
+        0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra externa para efeito de profundidade */
+    display: flex; /* Usa flexbox para layout interno */
+    justify-content: center; /* Centraliza a imagem horizontalmente dentro do contêiner */
+    align-items: center; /* Centraliza a imagem verticalmente dentro do contêiner */
+    margin: 10px; /* Margem ao redor do contêiner da imagem */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transição suave para transformações e sombras */
+    box-sizing: border-box; /* Inclui bordas e padding nas dimensões totais do contêiner */
+}
+
+/* Imagem dentro do contêiner de seleção */
+.selection-image {
+    max-width: 70%; /* Garante que a imagem não exceda a largura do contêiner */
+    max-height: 70%; /* Garante que a imagem não exceda a altura do contêiner */
+    object-fit: contain; /* Mantém a proporção da imagem */
+    cursor: pointer; /* Muda o cursor para indicar que a imagem é clicável */
+}
+
+/* Estilização ao passar o mouse sobre o contêiner da imagem */
+.selection-image-container:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do contêiner ao passar o mouse */
+    border-radius: 10px; /* Arredonda os cantos do contêiner */
+    box-shadow: 
+        inset 0px 0px 10px 6px rgba(0, 0, 0, 0.5), /* Sombra interna mais intensa */
+        0px 8px 20px rgba(0, 0, 0, 0.3); /* Sombra externa mais intensa */
+}
+
+/* Caixa de mensagem acima da grid de imagens */
+.message-box {
+    font-family: 'Bungee', cursive; /* Define a fonte usada no título */
+    color: #ffc000; /* Cor do texto */
+    font-size: 35px; /* Tamanho da fonte */
+    font-weight: 400; /* Peso da fonte */
+    text-shadow: 0 1px 3px #000; /* Sombra no texto para destaque */
+    text-align: center; /* Centraliza o texto dentro da caixa */
+    padding: 2px 0; /* Espaçamento interno acima e abaixo do texto */
+    margin-top: -30px; /* Margem negativa para ajustar a posição vertical da caixa */
+    margin: 10px 0;
+}
+
+.message-box-2 {
+    font-family: 'Bungee', cursive; /* Define a fonte usada no título */
+    color: #00FC00; /* Cor do texto */
+    font-size: 35px; /* Tamanho da fonte */
+    font-weight: 400; /* Peso da fonte */
+    text-shadow: 0 1px 3px #000; /* Sombra no texto para destaque */
+    text-align: center; /* Centraliza o texto dentro da caixa */
+    padding: 2px 0; /* Espaçamento interno acima e abaixo do texto */
+    margin-top: -30px; /* Margem negativa para ajustar a posição vertical da caixa */
+    margin: 10px 0;
+}
+
+/* Estilização do balão de chat */
+.chat-bubble-fist {
+    font-family: 'Bungee', cursive; /* Define a fonte usada no título */
+    position: absolute; /* Posiciona o balão de forma absoluta em relação ao contêiner da imagem */
+    top: -70px; /* Ajusta a posição vertical do balão */
+    left: 100%; /* Centraliza o balão horizontalmente */
+    transform: translateX(-50%); /* Ajusta o alinhamento horizontal */
+    background-color: white; /* Cor de fundo do balão */
+    border: 4px solid #ffb000; /* Borda do balão */
+    border-radius: 0px; /* Arredonda os cantos do balão */
+    padding: 10px; /* Espaçamento interno dentro do balão */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ao redor do balão */
+    font-family: 'Bungee', cursive; /* Define a fonte usada no título */
+    font-size: 20px; /* Tamanho da fonte */
+    color: black; /* Cor do texto */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    z-index: 10;
+}
+
+/* Triângulo que aponta para o balão de chat */
+.chat-bubble-fist::after {
+    content: ''; /* Necessário para criar o triângulo */
+    position: absolute; /* Posiciona o triângulo de forma absoluta dentro do balão */
+    bottom: -10px; /* Ajusta a posição vertical do triângulo */
+    left: 50%; /* Centraliza o triângulo horizontalmente */
+    transform: translateX(-50%); /* Ajusta o alinhamento horizontal */
+    border-width: 10px; /* Define a largura das bordas do triângulo */
+    border-style: solid; /* Estilo sólido para as bordas */
+    border-color: white transparent transparent transparent; /* Define as cores das bordas do triângulo */
+}
+
+
+
+/* Estilos para as formas geométricas */
+.shape-3-quadrado { /* FUNCIONA */
+    width: 40px;
+    height: 40px;
+    background-color: lawngreen;
+}
+
+.shape-3-elipse { /* FUNCIONA */
+    width: 60px;
+    height: 30px;
+    background-color: cyan;
+    border-radius: 50%;
+}
+
+.shape-3-circulo { /* FUNCIONA */
+    width: 40px;
+    height: 40px;
+    background-color: gold;
+    border-radius: 50%;
+}
+
+.shape-3-retangulo { /* FUNCIONA */
+    width: 40px;
+    height: 30px;
+    background-color: red;
+}
+
+.shape-3-losango { /* FUNCIONA */
+    width: 30px;
+    height: 30px;
+    background-color: darkmagenta;
+    transform: rotate(45deg);
+}
+
+.shape-3-paralelogramo { /* FUNCIONA */
+    width: 50px;
+    height: 30px;
+    background-color: pink;
+    transform: skew(20deg);
+}
+
+.shape-3-pentagono-2 {
+    position: relative;
+    width: 54px;
+    height: 31px;
+    background-color: orangered;
+    transform: rotate(54deg) skewX(-10deg);
+}
+
+.shape-3-retangulo-2 {
+    width: 60px;
+    height: 20px;
+    background-color: gray;
+}
+
+/* Imagem a completa s */
+
+
+.incomplete-image-3 {
+    position: relative;
+    width: 205px;
+    height: 205px;
+    background-color: #ffb000; /* Cor do quadrado */
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid white;
+    box-shadow: 
+        inset 0px 0px 7px 4px rgba(0, 0, 0, 0.4), /* Sombra interna para efeito de profundidade */
+        0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra externa para efeito de profundidade */
+    border-radius: 0px;
+    overflow: hidden; /* Garante que a forma não ultrapasse os limites do container */
+}
+
+.missing-shape-3 {
+    width: 100px;  /* Ajuste o tamanho da forma */
+    height: 100px; /* Ajuste o tamanho da forma */
+    background-color: transparent; /* Espaço para a forma faltante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Mantém a forma centralizada dentro do container */
+}
+
+.box-5 {
+    margin-top: -15px;
+    display: flex;
+    flex-direction: column; /* Para alinhar texto e botão em coluna */
+    justify-content: center;
+    align-items: center; /* Centraliza os itens dentro da div */
+    background: transparent; /* Cor de fundo para exemplo */
+    padding: 10px;
+    padding-right: 40px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px; /* Arredonda os cantos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* Sombra leve */
+  }

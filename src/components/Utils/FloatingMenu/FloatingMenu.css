@@ -1,4 +1,5 @@
 /* Importando Font Awesome para ícones */
+<<<<<<< HEAD
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 .container {
@@ -76,4 +77,90 @@
 
 .menu-content .btn-home {
     margin: 0.3em 0; /* Espaço entre os botões */
+=======
+
+/* Estilo para o contêiner principal do botão */
+.container {
+    text-align: center; /* Centraliza o conteúdo dentro do contêiner */
+    margin-top: 450px; /* Adiciona margem superior para posicionar o contêiner */
+}
+
+/* Estilo para o botão de mais (+) */
+.btn-plus {
+    margin: 10px auto; /* Centraliza o botão horizontalmente e adiciona margem vertical */
+    width: 70px; /* Define a largura do botão */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    border-radius: 8px; /* Arredonda os cantos do botão */
+    font-family: 'Skranji', cursive; /* Define a fonte do botão */
+    color: #ffc000; /* Cor do texto do botão */
+    font-size: 25px; /* Tamanho da fonte do botão */
+    font-weight: 400; /* Peso da fonte */
+    text-shadow: 0 1px 3px #000; /* Sombra do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 10px 0; /* Adiciona espaçamento interno vertical ao botão */
+    background: radial-gradient(circle, #8b0000, #8b0000); /* Gradiente de fundo radial */
+    border-top: 8px ridge #ffb000; /* Borda superior do botão */
+    border-left: 8px groove #ffb000; /* Borda esquerda do botão */
+    border-right: 8px ridge #ffb000; /* Borda direita do botão */
+    border-bottom: 8px groove #ffb000; /* Borda inferior do botão */
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3); /* Sombra interna do botão */
+    cursor: pointer; /* Cursor de ponteiro para indicar que é clicável */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transições suaves para cor de fundo e sombra */
+}
+
+/* Estilo para o botão de mais (+) ao passar o mouse */
+.btn-plus:hover {
+    background: radial-gradient(circle, #e52b2b, #8b0000); /* Gradiente de fundo radial ao passar o mouse */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa ao passar o mouse */
+}
+
+/* Estilo para o botão de mais (+) quando pressionado */
+.btn-plus:active {
+    background: radial-gradient(circle, #ec6a6a, #e52b2b); /* Gradiente de fundo radial quando pressionado */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa ao pressionar */
+}
+
+/* Estilo para o menu flutuante */
+.floating-menu {
+    position: fixed; /* Posiciona o menu fixo na tela */
+    bottom: 20px; /* Distância do fundo da tela */
+    right: 20px; /* Distância da borda direita da tela */
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: flex-end; /* Alinha os itens à direita */
+}
+
+/* Estilo para os botões dentro do menu flutuante */
+.floating-menu button {
+    margin: 0.2em 0; /* Espaço entre os botões */
+}
+
+/* Estilo para esconder o menu */
+.hidden {
+    display: none; /* Oculta o menu */
+}
+
+/* Estilo para mostrar o menu */
+.visible {
+    display: flex; /* Exibe o menu com flexbox */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: flex-end; /* Alinha os itens à direita */
+}
+
+/* Estilo específico para o botão de mais (+) dentro do menu flutuante */
+.floating-menu .btn-plus {
+    margin-bottom: 0.5em; /* Ajusta o espaço entre o botão de toggle e o menu */
+}
+
+/* Estilo para o conteúdo do menu */
+.menu-content {
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: flex-end; /* Alinha os itens à direita */
+}
+
+/* Estilo para os botões dentro do conteúdo do menu */
+.menu-content .btn-home {
+    margin: 0.3em 0; /* Espaço entre os botões do menu */
+>>>>>>> menu
 }

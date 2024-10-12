@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+
+/* Contêiner do carrossel */
+.third-carousel-container {
+    position: relative;
+    width: 60vw; /* Largura do carrossel */
+    height: 60vh; /* Altura do carrossel */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse o contêiner */
+    margin: 0 auto; /* Centraliza o carrossel horizontalmente */
+    display: flex;
+    flex-direction: column; /* Alinha os itens na coluna */
+    align-items: center; /* Alinha os itens no centro horizontalmente */
+    justify-content: center; /* Alinha os itens no centro verticalmente */
+    background: transparent; /* Fundo transparente */
+    border-top: 8px ridge #ffb000;
+    border-left: 8px groove #ffb000;
+    border-right: 8px ridge #ffb000;
+    border-bottom: 8px groove #ffb000;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Estiliza o título do carrossel */
+.carousel-title {
+    position: absolute;
+    top: 10px; /* Distância do topo */
+    width: 100%; /* Largura total do contêiner */
+    letter-spacing: 10px;
+    text-align: center; /* Centraliza o texto */
+    font-family: 'Bungee', cursive;
+    color: #ffc000; /* Cor do texto */
+    font-size: 35px; /* Tamanho da fonte */
+    font-weight: 400; /* Peso da fonte */
+    text-shadow: 
+    1px 1px 0 #000,    /* Contorno preto fino no topo e esquerda */
+    1px -1px 0 #000,  /* Contorno preto fino na parte inferior e direita */
+    1px -1px 0 #000,   /* Contorno preto fino na diagonal superior direita */
+    -2px 2px 0 #000,   /* Contorno preto fino na diagonal inferior esquerda */
+    2px 2px 2px rgba(0, 0, 0, 0.6); /* Sombra adicional para efeito de profundidade */
+    padding: 10px 0; /* Preenchimento vertical */
+    background: transparent; /* Fundo transparente */
+    z-index: 1; /* Garante que o título fique sobre os outros elementos */
+}
+
+/* Passos do Carrossel */
+.carousel-step {
+    width: 100%; /* Largura total do contêiner */
+    height: 100%; /* Altura total do contêiner */
+    display: flex;
+    align-items: center; /* Alinha o conteúdo verticalmente */
+    justify-content: center; /* Alinha o conteúdo horizontalmente */
+    font-size: 1.5em; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+    box-sizing: border-box; /* Inclui o preenchimento e a borda nas dimensões totais */
+    background: transparent; /* Fundo transparente */
+    margin-top: 40px; /* Margem superior */
+}
+
+/* Contêiner para os botões de navegação e nível */
+.navigation-buttons {
+    position: absolute;
+    bottom: 20px; /* Distância do fundo */
+    width: 100%; /* Largura total do contêiner */
+    display: flex;
+    justify-content: center; /* Alinha todos os botões no centro */
+    gap: 40px; /* Espaço entre os botões */
+    padding: 0 20px; /* Ajusta o espaçamento nas laterais */
+}
+
+/* Estilo dos botões de navegação */
+.btn-nav {
+    width: 80px; /* Largura dos botões de navegação */
+    height: 80px; /* Altura dos botões de navegação */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-family: 'Skranji', cursive; /* Fonte cursiva personalizada */
+    color: #ffc000; /* Cor do texto */
+    font-size: 30px; /* Tamanho da fonte */
+    font-weight: 400; /* Peso da fonte */
+    text-shadow: 0 1px 3px #000; /* Sombra do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 5px; /* Preenchimento interno */
+    background: radial-gradient(circle, #8b0000, #8b0000); /* Gradiente radial */
+    border-top: 8px ridge #ffb000; /* Borda superior */
+    border-left: 8px groove #ffb000; /* Borda esquerda */
+    border-right: 8px ridge #ffb000; /* Borda direita */
+    border-bottom: 8px groove #ffb000; /* Borda inferior */
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3); /* Sombra interna */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transições para efeitos de hover e click */
+    display: flex;
+    align-items: center; /* Alinha o conteúdo verticalmente */
+    justify-content: center; /* Alinha o conteúdo horizontalmente */
+}
+
+/* Estilo dos botões de navegação ao passar o mouse */
+.btn-nav:hover {
+    background: radial-gradient(circle, #e52b2b, #8b0000); /* Gradiente radial ao passar o mouse */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra ao passar o mouse */
+}
+
+/* Estilo dos botões de navegação ao clicar */
+.btn-nav:active {
+    background: radial-gradient(circle, #ec6a6a, #e52b2b); /* Gradiente radial ao clicar */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra ao clicar */
+}
+
+/* Estilo específico para o botão de nível */
+.level-button {
+    width: 200px; /* Largura do botão de nível */
+    height: 80px; /* Altura do botão de nível */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-family: 'Skranji', cursive; /* Fonte cursiva personalizada */
+    color: #ffc000; /* Cor do texto */
+    font-size: 30px; /* Tamanho da fonte */
+    font-weight: 400; /* Peso da fonte */
+    text-shadow: 0 1px 3px #000; /* Sombra do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 5px; /* Preenchimento interno */
+    background: radial-gradient(circle, #8b0000, #8b0000); /* Gradiente radial */
+    border-top: 8px ridge #ffb000; /* Borda superior */
+    border-left: 8px groove #ffb000; /* Borda esquerda */
+    border-right: 8px ridge #ffb000; /* Borda direita */
+    border-bottom: 8px groove #ffb000; /* Borda inferior */
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3); /* Sombra interna */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transições para efeitos de hover e click */
+    display: flex;
+    align-items: center; /* Alinha o conteúdo verticalmente */
+    justify-content: center; /* Alinha o conteúdo horizontalmente */
+}
+
+/* Estilo do botão de finalizar */
+.btn-nav.finish {
+    width: 60px; /* Largura do botão de finalizar */
+    height: 60px; /* Altura do botão de finalizar */
+    font-size: 22px; /* Tamanho da fonte do botão de finalizar */
+    background: radial-gradient(circle, #8b0000, #8b0000); /* Gradiente radial */
+    border-top: 8px ridge #ffb000; /* Borda superior */
+    border-left: 8px groove #ffb000; /* Borda esquerda */
+    border-right: 8px ridge #ffb000; /* Borda direita */
+    border-bottom: 8px groove #ffb000; /* Borda inferior */
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3); /* Sombra interna */
+}
+
+/* Estilo dos botões de navegação ao passar o mouse para o botão de finalizar */
+.btn-nav.finish:hover {
+    background: radial-gradient(circle, #003300, #003300); /* Gradiente radial ao passar o mouse */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra ao passar o mouse */
+}
+
+/* Estilo dos botões de navegação ao clicar para o botão de finalizar */
+.btn-nav.finish:active {
+    background: radial-gradient(circle, #003300, #003300); /* Gradiente radial ao clicar */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra ao clicar */
+}
+
+/* Estilo dos botões invisíveis */
+.btn-nav.disabled {
+    width: 60px; /* Largura dos botões desativados */
+    height: 60px; /* Altura dos botões desativados */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-family: 'Skranji', cursive; /* Fonte cursiva personalizada */
+    color: transparent; /* Torna o texto invisível */
+    font-size: 30px; /* Tamanho da fonte */
+    font-weight: 400; /* Peso da fonte */
+    text-shadow: none; /* Remove a sombra do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 5px; /* Preenchimento interno */
+    background: transparent; /* Fundo transparente */
+    border: 8px solid transparent; /* Borda transparente para manter o formato do botão */
+    box-shadow: none; /* Remove a sombra */
+    cursor: default; /* Mostra o cursor padrão */
+    pointer-events: none; /* Desativa a interatividade */
+}
+
+/* Imagens de fundo específicas para cada nível */
+
+
+.third-carousel-container.level-1 {
+    background-image: url('../../../assets/background_levels/ThirdModeOne_Two.png');
+}
+
+.third-carousel-container.level-2 {
+    background-image: url('../../../assets/background_levels/ThirdModeOne_Two.png');
+}
+
+.third-carousel-container.level-3 {
+    background-image: url('../../../assets/background_levels/ThirdModeThree_Four.png');
+}
+
+.third-carousel-container.level-4 {
+    background-image: url('../../../assets/background_levels/ThirdModeThree_Four.png');
+}
+
+.third-carousel-container.level-5 {
+    background-image: url('../../../assets/background_levels/ThirdModeFive_Six.png');
+}
+
+.third-carousel-container.level-6 {
+    background-image: url('../../../assets/background_levels/ThirdModeFive_Six.png');
+}
+
+.third-carousel-container.level-7 {
+    background-image: url('../../../assets/background_levels/ThirdModeSeven_Eight.png');
+}
+
+.third-carousel-container.level-8 {
+    background-image: url('../../../assets/background_levels/ThirdModeSeven_Eight.png');
+}
+
+.third-carousel-container.level-9 {
+    background-image: url('../../../assets/background_levels/ThirdModeNine_Ten.png');
+}
+
+.third-carousel-container.level-10 {
+    background-image: url('../../../assets/background_levels/ThirdModeNine_Ten.png');
+} 
+
+

@@ -1,0 +1,31 @@
+/* Importa a fonte "Bungee" do Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+
+/* Estilo para o contêiner do título do jogo */
+.title-container {
+    position: absolute; /* Posiciona o contêiner de forma absoluta em relação ao elemento pai */
+    top: 30%; /* Alinha o contêiner a 30% do topo da tela */
+    left: 50%; /* Alinha o contêiner ao centro horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza o contêiner vertical e horizontalmente */
+    z-index: 2; /* Define a ordem de empilhamento para que o título fique acima de outros elementos */
+    text-align: center; /* Alinha o texto no centro do contêiner */
+    width: 100%; /* Define a largura do contêiner para 100% da largura do pai */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse o contêiner */
+}
+
+/* Estilo para o título do jogo */
+.game-title {
+    font-family: 'Bungee', cursive; /* Define a fonte usada no título */
+    font-size: 200px; /* Tamanho da fonte do título */
+    letter-spacing: 8px; /* Espaçamento entre letras do título */
+    color: #ffc000; /* Cor do texto do título */
+    text-shadow: 
+        3px 3px 0 #000,    /* Sombra preta fina no topo e esquerda do texto */
+        3px -3px 0 #000,   /* Sombra preta fina na parte inferior e direita do texto */
+        3px -3px 0 #000,   /* Sombra preta fina na diagonal superior direita do texto */
+        -9px 9px 0 #000,   /* Sombra preta fina na diagonal inferior esquerda do texto */
+        9px 9px 16px rgba(0, 0, 0, 0.6); /* Sombra adicional para efeito de profundidade */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    margin: 0; /* Remove a margem padrão do título */
+    padding: 10px; /* Adiciona um espaçamento interno ao redor do texto */
+}

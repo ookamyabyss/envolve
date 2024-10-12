@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Importando a fonte Skranji */
 @import url('https://fonts.googleapis.com/css2?family=Skranji&display=swap');
 
@@ -52,4 +53,92 @@
 .btn-btn-mode:active {
     background: radial-gradient(circle, #ec6a6a, #e52b2b);
     box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
+=======
+/* Importando a fonte Skranji para os elementos que a utilizam */
+@import url('https://fonts.googleapis.com/css2?family=Skranji&display=swap');
+
+/* Estilo aplicado ao título dos botões */
+.btn-title {
+    font-family: 'Skranji', cursive; /* Define a fonte para Skranji */
+    color: #ffc000; /* Cor do texto do título */
+    font-size: 40px; /* Tamanho da fonte */
+    font-weight: 400; /* Espessura da fonte */
+    text-shadow: 0 1px 3px #000; /* Sombra para o texto */
+    text-align: center; /* Alinha o texto ao centro */
+    position: relative; /* Define a posição relativa para futuras referências */
+}
+
+/* Estiliza o container principal dos modos de jogo */
+.menu-mode {
+    display: flex; /* Define a exibição como flexível */
+    flex-direction: column; /* Organiza os elementos em uma coluna */
+    text-align: center; /* Centraliza o conteúdo */
+    margin-top: 450px; /* Adiciona margem superior para posicionamento */
+}
+
+/* Estilo aplicado aos botões de modo */
+.btn-mode {
+    margin: 10px auto; /* Margem automática para centralizar e espaçamento */
+    width: 250px; /* Largura do botão */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-family: 'Skranji', cursive; /* Fonte do botão */
+    color: #ffc000; /* Cor do texto */
+    font-size: 25px; /* Tamanho da fonte */
+    font-weight: 400; /* Espessura da fonte */
+    text-shadow: 0 1px 3px #000; /* Sombra no texto */
+    text-align: center; /* Centraliza o texto no botão */
+    padding: 10px 0; /* Preenchimento vertical */
+    background: radial-gradient(circle, #8b0000, #8b0000); /* Fundo com gradiente radial */
+    border-top: 8px ridge #ffb000; /* Borda superior do botão com estilo ridge */
+    border-left: 8px groove #ffb000; /* Borda esquerda com estilo groove */
+    border-right: 8px ridge #ffb000; /* Borda direita com estilo ridge */
+    border-bottom: 8px groove #ffb000; /* Borda inferior com estilo groove */
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3); /* Sombra interna para criar profundidade */
+    cursor: pointer; /* Cursor do mouse muda para pointer ao passar sobre o botão */
+    position: relative; /* Define a posição relativa para as animações */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transições suaves para o fundo e sombra */
+}
+
+/* Estilo do botão ao passar o mouse */
+.btn-mode:hover {
+    background: radial-gradient(circle, #e52b2b, #8b0000); /* Alteração da cor de fundo ao passar o mouse */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Efeito de sombra ao passar o mouse */
+}
+
+/* Estilo do botão ao ser clicado */
+.btn-mode:active {
+    background: radial-gradient(circle, #ec6a6a, #e52b2b); /* Alteração da cor de fundo ao ser clicado */
+    box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Efeito de sombra ao ser clicado */
+}
+
+/* Estilo das informações que aparecem ao lado dos botões */
+.info-container {
+    position: absolute; /* Posicionamento absoluto em relação ao botão */
+    width: 300px; /* Largura do container de informações */
+    height: 150px; /* Altura do container de informações */
+    background: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente preto */
+    color: white; /* Cor do texto */
+    padding: 10px; /* Preenchimento interno */
+    border-radius: 0px; /* Sem bordas arredondadas */
+    box-shadow: 10px 10px 10px rgba(0.5, 0.5, 0.5, 0.5); /* Sombra ao redor do container */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s ease-in-out; /* Transição suave para o aparecimento */
+    z-index: 11; /* Colocar o container de informações acima dos botões */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse o container */
+    top: 50%; /* Centraliza verticalmente o container em relação ao botão */
+    transform: translateY(-50%); /* Ajusta a centralização vertical */
+}
+
+/* Exibe o info-container à esquerda ao passar o mouse sobre o botão */
+.btn-mode:hover .info-left {
+    left: -350px; /* Posiciona o container à esquerda do botão */
+    opacity: 1; /* Torna o container visível */
+}
+
+/* Exibe o info-container à direita ao passar o mouse sobre o botão */
+.btn-mode:hover .info-right {
+    right: -350px; /* Posiciona o container à direita do botão */
+    opacity: 1; /* Torna o container visível */
+>>>>>>> menu
 }

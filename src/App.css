@@ -1,18 +1,40 @@
+<<<<<<< HEAD
 .App {
   text-align: center;
 }
 
+=======
+/* App.css */
+
+/* Estiliza a aplicação para ocupar a tela inteira sem rolagem */
+.App {
+  text-align: center;
+  overflow: hidden; /* Impede rolagem */
+  width: 100vw; /* Largura da viewport */
+  height: 100vh; /* Altura da viewport */
+  margin: 0; /* Remove margens */
+  padding: 0; /* Remove padding */
+  box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura e altura */
+}
+
+/* Define a altura do logo e desativa eventos de ponteiro */
+>>>>>>> menu
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+<<<<<<< HEAD
+=======
+/* Animação do logo quando a preferência de movimento reduzido não é definida */
+>>>>>>> menu
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+<<<<<<< HEAD
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -34,5 +56,31 @@
   }
   to {
     transform: rotate(360deg);
+=======
+/* Estiliza o cabeçalho da aplicação */
+.App-header {
+  background-color: #282c34; /* Cor de fundo escura */
+  min-height: 100vh; /* Ocupa a altura total da janela de visualização */
+  display: flex; /* Usa Flexbox para organizar os itens */
+  flex-direction: column; /* Organiza os itens em uma coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+  font-size: calc(10px + 2vmin); /* Ajusta o tamanho da fonte com base no tamanho da viewport */
+  color: white; /* Define a cor do texto como branco */
+}
+
+/* Estiliza os links dentro da aplicação */
+.App-link {
+  color: #61dafb; /* Define a cor do link */
+}
+
+/* Animação de rotação contínua do logo */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); /* Começa sem rotação */
+  }
+  to {
+    transform: rotate(360deg); /* Completa uma rotação de 360 graus */
+>>>>>>> menu
   }
 }

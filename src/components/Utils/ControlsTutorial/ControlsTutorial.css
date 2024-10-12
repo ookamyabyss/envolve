@@ -1,0 +1,67 @@
+
+.controls-tutorial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  color: #ffb000;
+  position: relative; 
+  margin-top: -60px;
+}
+
+.message-box-title {
+  font-family: 'Bungee', cursive; /* Define a fonte usada no título */
+  color: #ffc000; /* Cor do texto */
+  font-size: 35px; /* Tamanho da fonte */
+  font-weight: 400; /* Peso da fonte */
+  text-shadow: 0 1px 3px #000; /* Sombra no texto para destaque */
+  text-align: center; /* Centraliza o texto dentro da caixa */
+  padding: 2px 0; /* Espaçamento interno acima e abaixo do texto */
+  margin-top: -30px; /* Margem negativa para ajustar a posição vertical da caixa */
+  margin: 10px 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+  gap: 0px; /* Espaçamento entre as divs */
+}
+
+.box-1, .box-2 {
+  display: flex;
+  flex-direction: column; /* Para alinhar texto e botão em coluna */
+  justify-content: center;
+  align-items: center; /* Centraliza os itens dentro da div */
+  background: transparent; /* Cor de fundo para exemplo */
+  padding: 20px;
+  border-radius: 10px; /* Arredonda os cantos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* Sombra leve */
+}
+
+.message-box-text {
+  font-family: 'Bungee', cursive; /* Define a fonte usada no título */
+  color: #ffc000; /* Cor do texto */
+  font-size: 25px; /* Tamanho da fonte */
+  font-weight: 400; /* Peso da fonte */
+  text-shadow: 0 1px 3px #000; /* Sombra no texto para destaque */
+  text-align: center; /* Centraliza o texto dentro da caixa */
+  padding: 2px 0; /* Espaçamento interno acima e abaixo do texto */
+  margin-top: -30px; /* Margem negativa para ajustar a posição vertical da caixa */
+  margin: 10px 0;
+}
+
+.box-3 {
+  display: flex;
+  flex-direction: column; /* Para alinhar texto e botão em coluna */
+  justify-content: center;
+  align-items: center; /* Centraliza os itens dentro da div */
+  background: transparent; /* Cor de fundo para exemplo */
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px; /* Arredonda os cantos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* Sombra leve */
+}
+
