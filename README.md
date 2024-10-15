@@ -37,7 +37,7 @@ Execute o projeto:
 
 O jogo estará disponível no navegador, geralmente em http://localhost:3000.
 
-### **Tecnologias Usadas**
+### **TECNOLOGIA USADAS**
 
 -React: Framework utilizado para criar a interface do jogo.
 -JavaScript: Linguagem de programação principal.
