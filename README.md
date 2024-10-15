@@ -1,3 +1,5 @@
+![Envolve](./assets/envolve.png)
+
 # **ENVOLVE**
 
 **ENVOLVE** é uma ferramenta educacional gamificada desenvolvida com o objetivo de promover a inclusão digital da terceira idade, utilizando princípios de pensamento computacional. O projeto foi criado para permitir que idosos aprendam a utilizar tecnologias de forma prática, acessível e divertida, por meio de desafios interativos que trabalham habilidades como reconhecimento de padrões, resolução de problemas e coordenação motora.
