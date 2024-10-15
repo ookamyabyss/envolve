@@ -1,4 +1,4 @@
-![Envolve](./assets/envolve.png)
+![Envolve](./assets/title.png)
 
 # **ENVOLVE**
 
