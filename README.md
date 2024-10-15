@@ -4,7 +4,7 @@
 
 A ferramenta oferece três modos de jogo com múltiplas fases, que não se repetem, mantendo a experiência dinâmica a cada tentativa. Dependendo do desempenho do jogador, eles recebem de 1 a 3 estrelas, e o progresso é registrado para evolução de nível.
 
-## **MODOS DE JOGO**
+### **MODOS DE JOGO**
 
 -**Busca de Itens:** O usuário deve encontrar itens específicos em uma lista e clicar nos itens corretos que aparecem na tela.
 
@@ -12,7 +12,7 @@ A ferramenta oferece três modos de jogo com múltiplas fases, que não se repet
 
 -**Puzzle com Formas Geométricas:** O usuário completa uma imagem escolhendo e encaixando formas geométricas corretas, desenvolvendo raciocínio lógico e percepção visual.
 
-## **FUNCIONALIDADES**
+### **FUNCIONALIDADES**
 
 -**Progressão por Estrelas:** Os jogadores ganham estrelas conforme o desempenho e acumulam essas estrelas para subir de nível.
 
@@ -24,7 +24,7 @@ A ferramenta oferece três modos de jogo com múltiplas fases, que não se repet
 
 -**Interface Intuitiva:** Focada em ser acessível para pessoas idosas, com visual limpo e comandos simples.
 
-## Como Usar
+### **COMO USAR**
 
 Instalação
 Para executar a ferramenta localmente, você precisará ter o Node.js instalado. Siga os passos abaixo:
@@ -37,12 +37,12 @@ Execute o projeto:
 
 O jogo estará disponível no navegador, geralmente em http://localhost:3000.
 
-## Tecnologias Usadas
+### **Tecnologias Usadas**
 
-React: Framework utilizado para criar a interface do jogo.
-JavaScript: Linguagem de programação principal.
-CSS: Para a estilização da interface.
-Node.js: Ambiente de execução para a aplicação.
+-React: Framework utilizado para criar a interface do jogo.
+-JavaScript: Linguagem de programação principal.
+-CSS: Para a estilização da interface.
+-Node.js: Ambiente de execução para a aplicação.
 
 
 ### Autor
