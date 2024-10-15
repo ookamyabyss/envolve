@@ -6,23 +6,23 @@ A ferramenta oferece três modos de jogo com múltiplas fases, que não se repet
 
 ### **MODOS DE JOGO**
 
--**Busca de Itens:** O usuário deve encontrar itens específicos em uma lista e clicar nos itens corretos que aparecem na tela.
+- **Busca de Itens:** O usuário deve encontrar itens específicos em uma lista e clicar nos itens corretos que aparecem na tela.
 
--**Digitação de Palavras/Códigos:** O jogador deve digitar corretamente palavras ou códigos apresentados na tela, reforçando habilidades de teclado.
+- **Digitação de Palavras/Códigos:** O jogador deve digitar corretamente palavras ou códigos apresentados na tela, reforçando habilidades de teclado.
 
--**Puzzle com Formas Geométricas:** O usuário completa uma imagem escolhendo e encaixando formas geométricas corretas, desenvolvendo raciocínio lógico e percepção visual.
+- **Puzzle com Formas Geométricas:** O usuário completa uma imagem escolhendo e encaixando formas geométricas corretas, desenvolvendo raciocínio lógico e percepção visual.
 
 ### **FUNCIONALIDADES**
 
--**Progressão por Estrelas:** Os jogadores ganham estrelas conforme o desempenho e acumulam essas estrelas para subir de nível.
+- **Progressão por Estrelas:** Os jogadores ganham estrelas conforme o desempenho e acumulam essas estrelas para subir de nível.
 
--**Sistema de Dicas:** Os jogadores podem usar dicas limitadas para facilitar a busca de itens, a digitação ou a solução dos puzzles.
+- **Sistema de Dicas:** Os jogadores podem usar dicas limitadas para facilitar a busca de itens, a digitação ou a solução dos puzzles.
 
--**Sons de Feedback:** Sons diferentes para ações corretas e incorretas, tornando a experiência mais imersiva.
+- **Sons de Feedback:** Sons diferentes para ações corretas e incorretas, tornando a experiência mais imersiva.
 
--**Sistema de Níveis:** 'aqui tem que descrever sobre as fases não ficarem repetidas'
+- **Sistema de Níveis:** 'aqui tem que descrever sobre as fases não ficarem repetidas'
 
--**Interface Intuitiva:** Focada em ser acessível para pessoas idosas, com visual limpo e comandos simples.
+- **Interface Intuitiva:** Focada em ser acessível para pessoas idosas, com visual limpo e comandos simples.
 
 ### **COMO USAR**
 
@@ -39,10 +39,10 @@ O jogo estará disponível no navegador, geralmente em http://localhost:3000.
 
 ### **TECNOLOGIA USADAS**
 
--React: Framework utilizado para criar a interface do jogo.
--JavaScript: Linguagem de programação principal.
--CSS: Para a estilização da interface.
--Node.js: Ambiente de execução para a aplicação.
+- React: Framework utilizado para criar a interface do jogo.
+- JavaScript: Linguagem de programação principal.
+- CSS: Para a estilização da interface.
+- Node.js: Ambiente de execução para a aplicação.
 
 
 ### Autor
