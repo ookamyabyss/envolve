@@ -46,8 +46,8 @@ O jogo estará disponível no navegador, geralmente em http://localhost:3000.
 
 
 ### Autor
-- Rafael Roberto Coutinho da Cruz
-- Universidade do Estado da Bahia - UNEB
-- Curso de Sistemas de Informação
+- ***Rafael Roberto Coutinho da Cruz***
+- ***Universidade do Estado da Bahia - UNEB***
+- ***Curso de Sistemas de Informação***
 
 
