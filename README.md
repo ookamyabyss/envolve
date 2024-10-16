@@ -24,7 +24,7 @@ A ferramenta oferece três modos de jogo com múltiplas fases, que não se repet
 
 - **Interface Intuitiva:** Focada em ser acessível para pessoas idosas, com visual limpo e comandos simples.
 
-![Envolve-4](./src/assets/readme/4.png)
+![Envolve-4](./src/assets/readme/14.png)
 
 Instalação
 Para executar a ferramenta localmente, você precisará ter o Node.js instalado. Siga os passos abaixo:
@@ -37,7 +37,7 @@ Execute o projeto:
 
 O jogo estará disponível no navegador, geralmente em http://localhost:3000.
 
-![Envolve-5](./src/assets/readme/5.png)
+![Envolve-5](./src/assets/readme/15.png)
 
 - React: Framework utilizado para criar a interface do jogo.
 - JavaScript: Linguagem de programação principal.
@@ -45,7 +45,7 @@ O jogo estará disponível no navegador, geralmente em http://localhost:3000.
 - Node.js: Ambiente de execução para a aplicação.
 
 
-![Envolve-6](./src/assets/readme/6.png)
+![Envolve-6](./src/assets/readme/16.png)
 
 - ***Rafael Roberto Coutinho da Cruz***
 - ***Universidade do Estado da Bahia - UNEB***
