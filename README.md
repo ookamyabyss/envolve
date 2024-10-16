@@ -31,6 +31,10 @@ Para executar a ferramenta localmente, você precisará ter o Node.js instalado.
 
 Clone o repositório:
 
+```bash
+  git clone https://github.com/ookamyabyss/game/
+```
+
 Instale as dependências do projeto:
 
 Execute o projeto:
