@@ -1,10 +1,10 @@
-![Envolve-1](./src/assets/ENVOLVE.png)
+![Envolve-1](./src/assets/readme/1.png)
 
 **ENVOLVE** é uma ferramenta educacional gamificada desenvolvida com o objetivo de promover a inclusão digital da terceira idade, utilizando princípios de pensamento computacional. O projeto foi criado para permitir que idosos aprendam a utilizar tecnologias de forma prática, acessível e divertida, por meio de desafios interativos que trabalham habilidades como reconhecimento de padrões, resolução de problemas e coordenação motora.
 
 A ferramenta oferece três modos de jogo com múltiplas fases, que não se repetem, mantendo a experiência dinâmica a cada tentativa. Dependendo do desempenho do jogador, eles recebem de 1️⃣ a 3️⃣ estrelas, e o progresso é registrado para evolução de nível.
 
-![Envolve-2](./src/assets/MODOS_JOGO.png)
+![Envolve-2](./src/assets/readme/2.png)
 
 - **Busca de Itens:** O usuário deve encontrar itens específicos em uma lista e clicar nos itens corretos que aparecem na tela.
 
@@ -12,7 +12,7 @@ A ferramenta oferece três modos de jogo com múltiplas fases, que não se repet
 
 - **Puzzle com Formas Geométricas:** O usuário completa uma imagem escolhendo e encaixando formas geométricas corretas, desenvolvendo raciocínio lógico e percepção visual.
 
-### **FUNCIONALIDADES**
+![Envolve-3](./src/assets/readme/3.png)
 
 - **Progressão por Estrelas:** Os jogadores ganham estrelas conforme o desempenho e acumulam essas estrelas para subir de nível.
 
@@ -24,7 +24,7 @@ A ferramenta oferece três modos de jogo com múltiplas fases, que não se repet
 
 - **Interface Intuitiva:** Focada em ser acessível para pessoas idosas, com visual limpo e comandos simples.
 
-### **COMO USAR**
+![Envolve-4](./src/assets/readme/4.png)
 
 Instalação
 Para executar a ferramenta localmente, você precisará ter o Node.js instalado. Siga os passos abaixo:
@@ -37,7 +37,7 @@ Execute o projeto:
 
 O jogo estará disponível no navegador, geralmente em http://localhost:3000.
 
-### **TECNOLOGIA USADAS**
+![Envolve-5](./src/assets/readme/5.png)
 
 - React: Framework utilizado para criar a interface do jogo.
 - JavaScript: Linguagem de programação principal.
@@ -45,7 +45,8 @@ O jogo estará disponível no navegador, geralmente em http://localhost:3000.
 - Node.js: Ambiente de execução para a aplicação.
 
 
-### Autor
+![Envolve-6](./src/assets/readme/6.png)
+
 - ***Rafael Roberto Coutinho da Cruz***
 - ***Universidade do Estado da Bahia - UNEB***
 - ***Curso de Sistemas de Informação***
