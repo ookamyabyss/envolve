@@ -12,7 +12,7 @@ A ferramenta oferece três modos de jogo com múltiplas fases, que não se repet
 
 - **Puzzle com Formas Geométricas:** O usuário completa uma imagem escolhendo e encaixando formas geométricas corretas, desenvolvendo raciocínio lógico e percepção visual.
 
-![Envolve-3](./src/assets/readme/13.png)
+![Envolve-3](./src/assets/readme/3.png)
 
 - **Progressão por Estrelas:** Os jogadores ganham estrelas conforme o desempenho e acumulam essas estrelas para subir de nível.
 
