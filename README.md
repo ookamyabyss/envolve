@@ -32,12 +32,25 @@ Para executar a ferramenta localmente, você precisará ter o Node.js instalado.
 Clone o repositório:
 
 ```bash
-  git clone https://github.com/ookamyabyss/game/
+  git clone https://github.com/ookamyabyss/envolve/
+```
+Entre no diretório do projeto
+
+```bash
+  cd envolve
 ```
 
 Instale as dependências do projeto:
 
+```bash
+  npm install
+```
+
 Execute o projeto:
+
+```bash
+  npm run start
+```
 
 O jogo estará disponível no navegador, geralmente em http://localhost:3000.
 
