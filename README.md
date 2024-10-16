@@ -71,8 +71,7 @@ O jogo estará disponível no navegador, geralmente em http://localhost:3000.
 
 - ***Rafael Roberto Coutinho da Cruz***
 - ***Universidade do Estado da Bahia - UNEB***
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/_muad.dib/)
-
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rafaelzinhoccruz@gmail.com)
+- [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/_muad.dib/)
+- [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rafaelzinhoccruz@gmail.com)
 
 
