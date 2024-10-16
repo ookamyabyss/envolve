@@ -1,5 +1,10 @@
 ![Envolve-1](./src/assets/readme/1.png)
 
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-yellow)
+![CSS](https://img.shields.io/badge/CSS-3-blue)
+![React](https://img.shields.io/badge/React-17.0.2-61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-14.x-green)
+
 **ENVOLVE** é uma ferramenta educacional gamificada desenvolvida com o objetivo de promover a inclusão digital da terceira idade, utilizando princípios de pensamento computacional. O projeto foi criado para permitir que idosos aprendam a utilizar tecnologias de forma prática, acessível e divertida, por meio de desafios interativos que trabalham habilidades como reconhecimento de padrões, resolução de problemas e coordenação motora.
 
 A ferramenta oferece três modos de jogo com múltiplas fases, que não se repetem, mantendo a experiência dinâmica a cada tentativa. Dependendo do desempenho do jogador, eles recebem de 1️⃣ a 3️⃣ estrelas, e o progresso é registrado para evolução de nível.
@@ -34,7 +39,7 @@ Clone o repositório:
 ```bash
   git clone https://github.com/ookamyabyss/envolve/
 ```
-Entre no diretório do projeto
+Entre no diretório do projeto:
 
 ```bash
   cd envolve
