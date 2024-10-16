@@ -4,7 +4,7 @@
 
 A ferramenta oferece três modos de jogo com múltiplas fases, que não se repetem, mantendo a experiência dinâmica a cada tentativa. Dependendo do desempenho do jogador, eles recebem de 1️⃣ a 3️⃣ estrelas, e o progresso é registrado para evolução de nível.
 
-![Envolve-2](./src/assets/readme/2.png)
+![Envolve-2](./src/assets/readme/12.png)
 
 - **Busca de Itens:** O usuário deve encontrar itens específicos em uma lista e clicar nos itens corretos que aparecem na tela.
 
@@ -12,7 +12,7 @@ A ferramenta oferece três modos de jogo com múltiplas fases, que não se repet
 
 - **Puzzle com Formas Geométricas:** O usuário completa uma imagem escolhendo e encaixando formas geométricas corretas, desenvolvendo raciocínio lógico e percepção visual.
 
-![Envolve-3](./src/assets/readme/3.png)
+![Envolve-3](./src/assets/readme/13.png)
 
 - **Progressão por Estrelas:** Os jogadores ganham estrelas conforme o desempenho e acumulam essas estrelas para subir de nível.
 
