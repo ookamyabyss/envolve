@@ -2,8 +2,8 @@
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-yellow)
 ![CSS](https://img.shields.io/badge/CSS-3-blue)
-![React](https://img.shields.io/badge/React-17.0.2-61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-14.x-green)
+![React](https://img.shields.io/badge/React-18.3.1-61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-22.7.0-green)
 
 **ENVOLVE** é uma ferramenta educacional gamificada desenvolvida com o objetivo de promover a inclusão digital da terceira idade, utilizando princípios de pensamento computacional. O projeto foi criado para permitir que idosos aprendam a utilizar tecnologias de forma prática, acessível e divertida, por meio de desafios interativos que trabalham habilidades como reconhecimento de padrões, resolução de problemas e coordenação motora.
 
