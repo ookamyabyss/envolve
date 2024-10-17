@@ -33,12 +33,6 @@ const ThirdModeCarousel = ({ currentStep, handleNext, handlePrevious }) => {
         navigate(`/third-mode-level/${level}`);
     };
 
-    // Manipulador de clique para voltar para a página anterior
-    const handleBackClick = () => {
-        playSound();
-        navigate(-1); // Volta para a página anterior
-    };
-
     // Função para lidar com as teclas de seta do teclado
     const handleKeyDown = (event) => {
         switch (event.key) {
@@ -66,14 +60,115 @@ const ThirdModeCarousel = ({ currentStep, handleNext, handlePrevious }) => {
     }, [currentStep]);
 
     // Define os passos do carrossel
-    const steps = Array.from({ length: 10 }, (_, index) => ({
-        title: `LEVEL ${index + 1}`,
-        content: (
-            <div>
-               {/* Conteúdo do nível pode ser adicionado aqui */}
-            </div>
-        ) 
-    }));
+    const steps = [
+        {
+            title: 'LEVEL 1',
+            content: (
+                <div className="level-description">
+                    <p> 8 MINUTOS </p>
+                    <p> 4 FORMAS </p>
+                    <div className="tips-count-2">2 DICAS</div>
+                </div>
+            ),
+        },
+        {
+            title: 'LEVEL 2',
+            content: (
+                <div className="level-description">
+                    <p> 6 MINUTOS </p>
+                    <p> 6 FORMAS </p>
+                    <div className="tips-count-2">3 DICAS</div>
+                </div>
+            ),
+        },
+        {
+            title: 'LEVEL 3',
+            content: (
+                <div className="level-description">
+                    <p> 4 MINUTOS </p>
+                    <p> 8 PALAVRAS </p>
+                    <div className="tips-count-2">4 DICAS</div>
+                </div>
+            ),
+        },
+        {
+            title: 'LEVEL 4',
+            content: (
+                <div className="level-description">
+                    <p> 5 MINUTOS </p>
+                    <p> 4 CÓDIGOS </p>
+                    <p> DESAPARECENDO </p>
+                    <div className="tips-count-2">10 DICAS</div>
+                </div>
+            ),
+        },
+        {
+            title: 'LEVEL 5',
+            content: (
+                <div className="level-description">
+                    <p> 4 MINUTOS </p>
+                    <p> 6 CÓDIGOS </p>
+                    <p> DESAPARECENDO </p>
+                    <div className="tips-count-2">10 DICAS</div>
+                </div>
+            ),
+        },
+        {
+            title: 'LEVEL 6',
+            content: (
+                <div className="level-description">
+                    <p> 3 MINUTOS </p>
+                    <p> 8 CÓDIGOS </p>
+                    <p> DESAPARECENDO </p>
+                    <div className="tips-count-2">10 DICAS</div>
+                </div>
+            ),
+        },
+        {
+            title: 'LEVEL 7',
+            content: (
+                <div className="level-description">
+                    <p> 5 MINUTOS </p>
+                    <p> 4 CÓDIGOS </p>
+                    <p> CRIPTÓGRADOS </p>
+                    <div className="tips-count-2">8 DICAS</div>
+                </div>
+            ),
+        },
+        {
+            title: 'LEVEL 8',
+            content: (
+                <div className="level-description">
+                    <p> 4 MINUTOS </p>
+                    <p> 6 CÓDIGOS </p>
+                    <p> CRIPTÓGRADOS </p>
+                    <div className="tips-count-2">8 DICAS</div>
+                </div>
+            ),
+        },
+        {
+            title: 'LEVEL 9',
+            content: (
+                <div className="level-description">
+                    <p> 3 MINUTOS </p>
+                    <p> 8 CÓDIGOS </p>
+                    <p> CRIPTÓGRADOS </p>
+                    <div className="tips-count-2">8 DICAS</div>
+                </div>
+            ),
+        },
+        {
+            title: 'LEVEL 10',
+            content: (
+                <div className="level-description">
+                    <p> 5 MINUTOS </p>
+                    <p> 9 CÓDIGOS </p>
+                    <p> CRIPTÓGRADOS </p>
+                    <div className="tips-count-2">5 DICAS</div>
+                </div>
+            ),
+        },
+    ];
 
     // Retorna null se o passo atual estiver fora do intervalo
     if (currentStep < 1 || currentStep > steps.length) {

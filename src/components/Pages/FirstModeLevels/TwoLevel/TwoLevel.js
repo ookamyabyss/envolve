@@ -91,7 +91,7 @@ const TwoLevel = () => {
     
             // Verifica se todos os itens foram encontrados
             if (updatedFoundItems.length === itemsToFind.length) {
-                const earnedStars = calculateStars(timeRemaining, 480, hintsUsed); // Calcula estrelas
+                const earnedStars = calculateStars(timeRemaining, 300, hintsUsed); // Calcula estrelas
                 setGameStatus('won');
                 handleFinishLevel(earnedStars); // Atualiza o total de estrelas
             }

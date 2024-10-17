@@ -25,7 +25,7 @@ A ferramenta oferece três modos de jogo com múltiplas fases, que não se repet
 
 - **Sons de Feedback:** Sons diferentes para ações corretas e incorretas, tornando a experiência mais imersiva.
 
-- **Sistema de Níveis:** 'aqui tem que descrever sobre as fases não ficarem repetidas'
+- **Sistema de Níveis:**  As fases são projetadas de forma que os desafios não se repitam, mesmo quando o jogador reinicia uma fase.
 
 - **Interface Intuitiva:** Focada em ser acessível para pessoas idosas, com visual limpo e comandos simples.
 

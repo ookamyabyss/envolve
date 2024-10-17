@@ -117,7 +117,7 @@ const EightLevel = () => {
     
             // Verifica se todos os itens foram encontrados
             if (foundItems.length + 1 === itemsToFind.length) {
-                const earnedStars = calculateStars(timeRemaining, 480, hintsUsed); // Calcula as estrelas
+                const earnedStars = calculateStars(timeRemaining, 300, hintsUsed); // Calcula as estrelas
                 setStars(earnedStars); // Atualiza o número de estrelas no estado
                 setGameStatus('won'); // Define o status do jogo como "vencido"
                 handleFinishLevel(earnedStars); // Adiciona as estrelas ao sessionStorage
