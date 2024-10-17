@@ -36,11 +36,11 @@
     letter-spacing: 8px; /* Espaçamento entre letras */
     color: #ffc000; /* Cor do texto */
     text-shadow: 
-        1px 1px 0 #000,    /* Contorno preto fino no topo e esquerda */
-        1px -1px 0 #000,  /* Contorno preto fino na parte inferior e direita */
-        1px -1px 0 #000,   /* Contorno preto fino na diagonal superior direita */
-        -2px 2px 0 #000,   /* Contorno preto fino na diagonal inferior esquerda */
-        2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra adicional para efeito de profundidade */
+        3px -3px 4px #000,    /* Contorno preto fino no topo e esquerda */
+        3px -3px 4px #000,  /* Contorno preto fino na parte inferior e direita */
+        3px -3px 4px #000,   /* Contorno preto fino na diagonal superior direita */
+        3px -3px 4px #000,   /* Contorno preto fino na diagonal inferior esquerda */
+        3px -3px 4px rgba(0, 0, 0, 0.6); /* Sombra adicional para efeito de profundidade */
     text-transform: uppercase; /* Transforma o texto para maiúsculas */
     margin: 0; /* Remove margens */
     padding: 5px; /* Espaço interno ao redor do texto */

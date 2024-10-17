@@ -110,7 +110,7 @@ const ThreeLevel = () => {
         setHintIndex(0);
 
         if (palavrasDigitadas.length + 1 === palavras.length) {
-          const earnedStars = calculateStars(timeRemaining, 300, hintsUsed); // Passando parâmetros corretos
+          const earnedStars = calculateStars(timeRemaining, 180, hintsUsed); // Passando parâmetros corretos
           handleFinishLevel(earnedStars); // Salvando estrelas
           setGameStatus('won');
         }

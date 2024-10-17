@@ -52,8 +52,6 @@ const OneLevel = () => {
       // Definir outras ações, como navegação para próxima fase ou exibir mensagem de vitória
   };
 
-  //-----------
-
   const selecionarPalavrasAleatorias = () => {
     const palavrasSelecionadas = [];
 
