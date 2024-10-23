@@ -78,3 +78,4 @@ O jogo estará disponível no navegador, geralmente em http://localhost:3000.
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rafaelzinhoccruz@gmail.com)
 
 
+![Envolve-7](./src/assets/readme/7.png)
