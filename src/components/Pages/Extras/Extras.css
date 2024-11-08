@@ -12,7 +12,7 @@ html, body {
 
 /* Estilo para o contêiner principal da página, que ocupa toda a tela */
 /* Alinha o conteúdo ao centro da tela vertical e horizontalmente */
-.level-container {
+.level-container-2 {
     display: flex; /* Usa flexbox para alinhar os elementos */
     flex-direction: column; /* Alinha os filhos na vertical */
     justify-content: center; /* Centraliza os filhos verticalmente */
@@ -30,14 +30,27 @@ html, body {
     align-items: center; /* Centraliza os filhos horizontalmente */
 }
 
-/* Estilização do título principal da página de opções */
+/* Estilização do subtítulo */
 .extras-container h1 {
     font-family: 'Bungee', cursive; /* Usa a fonte 'Bungee' */
+    font-size: 45px; /* Aumenta o tamanho da fonte */
     color: #ffb000; /* Define a cor do texto em laranja */
-    text-shadow: 2px 2px 0 #000; /* Aplica uma sombra preta para destacar o texto */
+    text-shadow: 
+        1px 1px 0 #000,    /* Contorno preto fino no topo e esquerda */
+        1px -1px 0 #000,  /* Contorno preto fino na parte inferior e direita */
+        1px -1px 0 #000,   /* Contorno preto fino na diagonal superior direita */
+        -2px 2px 0 #000,   /* Contorno preto fino na diagonal inferior esquerda */
+        2px 2px 2px rgba(0, 0, 0, 0.6); /* Sombra adicional para efeito de profundidade */
+    margin-bottom: 20px; /* Adiciona um espaçamento inferior */
+    letter-spacing: 5px; /* Espaçamento entre letras */
+
 }
 
-/* Estilização do subtítulo "Troca Nome" */
+.extras-container h1:first-of-type {
+    margin-bottom: -10px; /* Ajuste esse valor conforme necessário */
+}
+
+/* Estilização do subtítulo */
 .extras-container h3 {
     font-family: 'Bungee', cursive; /* Usa a fonte 'Bungee' */
     font-size: 35px; /* Aumenta o tamanho da fonte */
@@ -52,7 +65,6 @@ html, body {
     letter-spacing: 5px; /* Espaçamento entre letras */
 
 }
-
 
 /* Estilização do menu de navegação para o botão de voltar */
 .extras-back-menu {
@@ -72,4 +84,69 @@ html, body {
     border: 8px ridge #ffb000; /* Define uma borda com estilo 'ridge' em dourado */
     box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3); /* Sombra interna para profundidade */
     cursor: pointer; /* Define o cursor como pointer ao passar sobre o botão */
+}
+
+.extra-grid-container {
+    margin-top: -5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Duas colunas iguais */
+    gap: 30px; /* Espaçamento entre as divs */
+}
+
+.extra-box-1 {
+    display: flex;
+    flex-direction: column; /* Para alinhar texto e botão em coluna */
+    justify-content: center;
+    align-items: center; /* Centraliza os itens dentro da div */
+    background: transparent; /* Cor de fundo para exemplo */
+    padding: 5px;
+    border-radius: 10px; /* Arredonda os cantos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* Sombra leve */
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+    background: rgba(40, 44, 52, 0.7); /* Cor de fundo com transparência */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidade com Webkit */
+}
+
+/* Estilização do subtítulo */
+.extra-box-text {
+    font-family: 'Bungee', cursive; /* Usa a fonte 'Bungee' */
+    font-size: 30px; /* Aumenta o tamanho da fonte */
+    color: white; /* Define a cor do texto em laranja */
+    text-shadow: 
+        1px 1px 0 #000,    /* Contorno preto fino no topo e esquerda */
+        1px -1px 0 #000,  /* Contorno preto fino na parte inferior e direita */
+        1px -1px 0 #000,   /* Contorno preto fino na diagonal superior direita */
+        -2px 2px 0 #000,   /* Contorno preto fino na diagonal inferior esquerda */
+        2px 2px 2px rgba(0, 0, 0, 0.6); /* Sombra adicional para efeito de profundidade */
+    margin-bottom: 20px; /* Adiciona um espaçamento inferior */
+    letter-spacing: 0px; /* Espaçamento entre letras */
+}
+
+/* Estilização do subtítulo */
+.extra-box-text-2 {
+    font-family: 'Bungee', cursive; /* Usa a fonte 'Bungee' */
+    font-size: 25px; /* Aumenta o tamanho da fonte */
+    color: white; /* Define a cor do texto em laranja */
+    text-shadow: 
+        1px 1px 0 #000,    /* Contorno preto fino no topo e esquerda */
+        1px -1px 0 #000,  /* Contorno preto fino na parte inferior e direita */
+        1px -1px 0 #000,   /* Contorno preto fino na diagonal superior direita */
+        -2px 2px 0 #000,   /* Contorno preto fino na diagonal inferior esquerda */
+        2px 2px 2px rgba(0, 0, 0, 0.6); /* Sombra adicional para efeito de profundidade */
+    margin-bottom: 20px; /* Adiciona um espaçamento inferior */
+    letter-spacing: 0px; /* Espaçamento entre letras */
+}
+
+.extra-box-photo {
+    width: 150px; /* Tamanho do quadrado para a foto */
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+
+.extra-box-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

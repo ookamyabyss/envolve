@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import './Extras.css';
 import backgroundImage from '../../../assets/background_options/Background_options.png';
+import fotoRafael from '../../../assets/colaboradores/teste.png';
 
 const Extra = () => {
 
@@ -22,9 +23,48 @@ const Extra = () => {
     };
 
     return (
-        <div className="level-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
+        <div className="level-container-2" style={{ backgroundImage: `url(${backgroundImage})` }}>
             <div className="extras-container">
                 <h1>Extras</h1>
+
+                <h1>Desenvolvedores</h1>
+
+                <div className="extra-grid-container">
+
+                    <div className="extra-box-1">
+                        <div className="extra-box-photo">
+                            <img src={fotoRafael} alt="Foto de Rafael" />
+                        </div>
+
+                        <p className="extra-box-text">RAFAEL R. C. DA CRUZ</p>
+                        <p className="extra-box-text-2">RAFAELZINHOCCRUZ@GMAIL.COM</p>
+                        
+                    </div>
+
+                    
+                    <div className="extra-box-1"> 
+                        <div className="extra-box-photo">
+                            <img src={fotoRafael} alt="Foto de Rafael" />
+                        </div>
+
+                        <p className="extra-box-text">DÉBORA A. REGO CHAVES</p>
+                        <p className="extra-box-text-2">dchaves@uneb.br</p>
+
+                    </div>
+
+                    
+                    <div className="extra-box-1">
+                        <div className="extra-box-photo">
+                            <img src={fotoRafael} alt="Foto de Rafael" />
+                        </div>
+
+                        <p className="extra-box-text">MONICA DE SOUZA MASSA</p>
+                        <p className="extra-box-text-2">mmassa@uneb.br</p>
+
+                    </div>
+
+
+                </div>
 
 
             </div>

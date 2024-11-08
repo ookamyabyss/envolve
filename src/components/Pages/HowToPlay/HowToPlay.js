@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import './HowToPlay.css';
 import backgroundImage from '../../../assets/background_options/Background_options.png';
+import video1 from '../../../assets/videos/video_Teclado.mp4';
+
 
 const HowToPlay = () => {
 
@@ -22,17 +24,16 @@ const HowToPlay = () => {
     };
 
     return (
-        <div className="level-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
+        <div className="level-container-1" style={{ backgroundImage: `url(${backgroundImage})` }}>
             <div className="howtoplay-container">
                 <h1>Como Jogar</h1>
 
                 <div className="howtoplay-grid-container">
 
-                    <div className="howtoplay-box-1">
-
-                        <p className="howtoplay-box-text" >Como usar o teclado.</p>
-
-                    </div>
+                <div className="howtoplay-box-1">
+                    <p className="howtoplay-box-text">Como usar o teclado.</p>
+                    <video className="howtoplay-video" src={video1} type="video/mp4" controls />
+                </div>
 
                     <div className="howtoplay-box-1">
 

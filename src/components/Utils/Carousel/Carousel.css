@@ -77,16 +77,19 @@
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
+
 /* Estilo dos botões de navegação ao passar o mouse */
 .btn-tutorial-nav:hover {
     background: radial-gradient(circle, #e52b2b, #8b0000); /* Escurece o gradiente ao passar o mouse */
     box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa ao passar o mouse */
 }
+
 /* Estilo dos botões de navegação ao clicar */
 .btn-tutorial-nav:active {
     background: radial-gradient(circle, #ec6a6a, #e52b2b); /* Escurece ainda mais ao clicar */
     box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa ao clicar */
 }
+
 /* Estilo específico para o botão de finalizar */
 .btn-tutorial-fim {
     margin: 1rem auto; /* Usando rem em vez de px */
@@ -109,11 +112,13 @@
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
+
 /* Estilo dos botões de finalizar ao passar o mouse */
 .btn-tutorial-fim:hover {
     background: radial-gradient(circle, #003300, #003300); /* Escurece o verde ao passar o mouse */
     box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2); /* Sombra externa ao passar o mouse */
 }
+
 /* Estilo dos botões de finalizar ao clicar */
 .btn-tutorial-fim:active {
     background: radial-gradient(circle, #002200, #002200); /* Escurece ainda mais ao clicar */
