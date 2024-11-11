@@ -284,9 +284,9 @@ const OneLevel = () => {
 
         <div className="item-list">
           <div className="status">
-            <p>{formatTime(timeRemaining)}</p>
-            <p>Palavras digitadas:</p>
-            <p>{palavrasDigitadas.length}/{palavras.length}</p>
+            <p>Tempo Limite: {formatTime(timeRemaining)}</p>
+            <p>Palavras digitadas: {palavrasDigitadas.length}/{palavras.length} </p>
+            <p>Digite as palavras listada abaixo.</p>
           </div>
 
           {/* Aplique a classe hidden-TWO diretamente no contêiner da lista de palavras */}

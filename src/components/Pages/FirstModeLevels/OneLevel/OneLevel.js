@@ -235,9 +235,9 @@ const OneLevel = () => {
                 {/* Lista de itens a serem encontrados */}
                 <div className="item-list">
                     <div className="status-one">
-                        <p>{formatTime(timeRemaining)}</p>
-                        <p>Itens encontrados: </p>
-                        <p>{foundItems.length}/{itemsToFind.length}</p>
+                        <p>Tempo Limite: {formatTime(timeRemaining)}</p>
+                        <p>Itens encontrados: {foundItems.length}/{itemsToFind.length} </p>
+                        <p>Encontre os itens listado abaixo.</p>
                     </div>
                     <ul>
                         {itemsToFind.map((item, index) => (

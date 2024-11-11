@@ -263,9 +263,9 @@ const EightLevel = () => {
         
                 <div className="item-list">
                     <div className="status">
-                        <p>{formatTime(timeRemaining)}</p>
-                        <p>Itens encontrados: </p>
-                        <p>{foundItems.length}/{itemsToFind.length}</p>
+                        <p>Tempo Limite: {formatTime(timeRemaining)}</p>
+                        <p>Itens encontrados: {foundItems.length}/{itemsToFind.length} </p>
+                        <p>Encontre os itens listado abaixo.</p>
                     </div>
                     <ul>
                         {itemsToFind.map((item, index) => (
