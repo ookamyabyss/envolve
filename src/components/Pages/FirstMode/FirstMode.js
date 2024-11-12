@@ -53,10 +53,6 @@ const FirstMode = () => {
         setShowNameInput(!name); // Se já houver nome, não mostra o input
     }, []);
 
-
-
-    
-
     // Estado para rastrear o passo atual do carrossel
     const [currentStep, setCurrentStep] = useState(1);
 

@@ -31,7 +31,16 @@ A ferramenta oferece três modos de jogo com múltiplas fases, que não se repet
 
 ![Envolve-4](./src/assets/readme/4.png)
 
-Instalação
+Acesso Online
+
+Acesse o jogo diretamente pelo link abaixo, sem precisar instalar nada:
+
+```bash
+  https://envolve-theta.vercel.app
+```
+
+Instalação Local
+
 Para executar a ferramenta localmente, você precisará ter o Node.js instalado. Siga os passos abaixo:
 
 Clone o repositório:

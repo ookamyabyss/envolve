@@ -22,8 +22,24 @@ const TenLevel = () => {
     const [visibilityInterval, setVisibilityInterval] = useState(null);
     const [lockedItems, setLockedItems] = useState([]);
     const [hintsUsed, setHintsUsed] = useState(0); // Usar estado para controlar as dicas
-    const MAX_HINTS = 1; // Número máximo de dicas permitidas
     const [showHintLimitMessage, setShowHintLimitMessage] = useState(false); // Estado para controlar a exibição da mensagem de limite
+
+    const [totalStars, setTotalStars] = useState(0);
+    const [level, setLevel] = useState(1);
+    const MAX_HINTS = 1 + level - 1;
+
+    // Função para calcular o nível com base nas estrelas
+    const calculateLevel = (stars) => {
+        let currentLevel = 1;
+        let starsNeeded = 10;
+
+        while (stars >= starsNeeded) {
+            currentLevel++;
+            starsNeeded += 15;
+        }
+
+        return currentLevel;
+    };
 
     // Função para recuperar a contagem de estrelas do sessionStorage
     const getTotalStars = () => {
@@ -36,13 +52,22 @@ const TenLevel = () => {
         const currentStars = getTotalStars();
         const newTotal = currentStars + stars;
         sessionStorage.setItem('totalStars', newTotal);
+        setTotalStars(newTotal); // Atualiza o estado local também
     };
 
+    // Função que roda ao montar o componente para atualizar totalStars e o nível
+    useEffect(() => {
+        const starsFromStorage = getTotalStars();
+        setTotalStars(starsFromStorage);
+        setLevel(calculateLevel(starsFromStorage)); // Calcula o nível inicial
+    }, []);
+
     const handleFinishLevel = (earnedStars) => {
-        // Atualiza o total de estrelas no sessionStorage
         addStars(earnedStars);
-        // Definir outras ações, como navegação para próxima fase ou exibir mensagem de vitória
+        const updatedStars = getTotalStars();
+        setLevel(calculateLevel(updatedStars)); // Atualiza o nível após concluir o nível
     };
+
     
     // Função para carregar as imagens dos itens
     const importAll = (r) => {
