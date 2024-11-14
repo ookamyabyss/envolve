@@ -90,7 +90,7 @@ const Home = () => {
                         <FontAwesomeIcon icon={faTimes} />
                     </button>
 
-                    <h2>Digite seu nome no campo abaixo.</h2>
+                    <h2>Digite seu nome no campo abaixo RR.</h2>
     
                     <input 
                         type="text" 
