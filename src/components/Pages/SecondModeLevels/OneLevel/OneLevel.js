@@ -31,12 +31,29 @@ const OneLevel = () => {
   const [cursorPosition, setCursorPosition] = useState(0);
   const [hintsUsed, setHintsUsed] = useState(0); // Número de dicas usadas
   const [showHintLimitMessage, setShowHintLimitMessage] = useState(false); // Controle da exibição da mensagem de limite
-  const MAX_HINTS = 15; // Número máximo de dicas permitidas
+
+  const [totalStars, setTotalStars] = useState(0);
+  const [level, setLevel] = useState(1);
+  const MAX_HINTS = 15 + level - 1; // Número máximo de dicas permitidas
+
+
+  // Função para calcular o nível com base nas estrelas
+  const calculateLevel = (stars) => {
+    let currentLevel = 1;
+    let starsNeeded = 10;
+
+    while (stars >= starsNeeded) {
+      currentLevel++;
+      starsNeeded += 15;
+    }
+
+    return currentLevel;
+  };
 
   // Função para recuperar a contagem de estrelas do sessionStorage
   const getTotalStars = () => {
-      const stars = sessionStorage.getItem('totalStars');
-      return stars ? parseInt(stars, 10) : 0;
+    const stars = sessionStorage.getItem('totalStars');
+    return stars ? parseInt(stars, 10) : 0;
   };
 
   // Função para adicionar estrelas ao sessionStorage
@@ -44,12 +61,20 @@ const OneLevel = () => {
       const currentStars = getTotalStars();
       const newTotal = currentStars + stars;
       sessionStorage.setItem('totalStars', newTotal);
+      setTotalStars(newTotal); // Atualiza o estado local também
   };
 
+  // Função que roda ao montar o componente para atualizar totalStars e o nível
+  useEffect(() => {
+    const starsFromStorage = getTotalStars();
+    setTotalStars(starsFromStorage);
+    setLevel(calculateLevel(starsFromStorage)); // Calcula o nível inicial
+  }, []);
+
   const handleFinishLevel = (earnedStars) => {
-      // Atualiza o total de estrelas no sessionStorage
-      addStars(earnedStars);
-      // Definir outras ações, como navegação para próxima fase ou exibir mensagem de vitória
+    addStars(earnedStars);
+    const updatedStars = getTotalStars();
+    setLevel(calculateLevel(updatedStars)); // Atualiza o nível após concluir o nível
   };
 
   const selecionarPalavrasAleatorias = () => {
