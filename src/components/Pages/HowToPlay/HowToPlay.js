@@ -5,6 +5,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import './HowToPlay.css';
 import backgroundImage from '../../../assets/background_options/Background_options.png';
 import video1 from '../../../assets/videos/video_Teclado.mp4';
+import video2 from '../../../assets/videos/video_Mouse.mp4';
 
 
 const HowToPlay = () => {
@@ -38,6 +39,7 @@ const HowToPlay = () => {
                     <div className="howtoplay-box-1">
 
                         <p className="howtoplay-box-text" >Como usar o mouse.</p>
+                        <video className="howtoplay-video" src={video2} type="video/mp4" controls />
                     
                     </div>
 
