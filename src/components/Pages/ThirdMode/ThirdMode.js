@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Importação de componentes utilitários para o layout da página Home
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +12,11 @@ import './ThirdMode.css';
 
 // Componente FirstMode: Página de seleção de modo inicial com carrossel
 const ThirdMode = () => {
+
+    const [totalStars, setTotalStars] = useState(0);
+    const [userName, setUserName] = useState('');
+    const [showNameInput, setShowNameInput] = useState(true); // Para mostrar ou esconder o input de nome
+    const [level, setLevel] = useState(1); // Estado para o nível do jogador
 
     // Função para recuperar a contagem de estrelas do sessionStorage
     const getTotalStars = () => {
