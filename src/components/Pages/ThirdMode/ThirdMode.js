@@ -7,10 +7,48 @@ import ThirdModeCarousel from '../../Utils/ThirdModeCarousel/ThirdModeCarousel';
 import clickSound from '../../../assets/sounds/click.mp3'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import starImage from '../../../assets/stars/star.png'; // Caminho da imagem da estrela
 import './ThirdMode.css'; 
 
 // Componente FirstMode: Página de seleção de modo inicial com carrossel
 const ThirdMode = () => {
+
+    // Função para recuperar a contagem de estrelas do sessionStorage
+    const getTotalStars = () => {
+        const stars = sessionStorage.getItem('totalStars');
+        return stars ? parseInt(stars, 10) : 0;
+    };
+
+    // Função para recuperar o nome do sessionStorage
+    const getUserName = () => {
+        const name = sessionStorage.getItem('userName');
+        return name ? name : '';
+    };
+
+    // Função para calcular o nível com base nas estrelas
+    const calculateLevel = (stars) => {
+        let currentLevel = 1;
+        let starsNeeded = 10; // Estrelas necessárias para o nível 1
+
+        while (stars >= starsNeeded) {
+            currentLevel++;
+            starsNeeded += 15; // Adiciona 15 estrelas para o próximo nível
+        }
+
+        return currentLevel - 1; // Subtrai 1 porque o loop aumenta além do necessário
+    };
+
+    // UseEffect para carregar estrelas e nome do sessionStorage ao iniciar
+    useEffect(() => {
+        const stars = getTotalStars();
+        setTotalStars(stars);
+        setLevel(calculateLevel(stars)); // Calcula o nível com as estrelas
+
+        const name = getUserName();
+        setUserName(name);
+        setShowNameInput(!name); // Se já houver nome, não mostra o input
+    }, []);
+
     // Estado para rastrear o passo atual do carrossel
     const [currentStep, setCurrentStep] = useState(1);
 
@@ -56,6 +94,17 @@ const ThirdMode = () => {
         <div className="third-mode">
             {/* Componente de vídeo de fundo */}
             <BackgroundVideo />
+
+            {/* DIV no canto superior direito para exibir o total de estrelas, nome e nível */}
+            <div className="hub">
+                <div className="name-container">
+                    <h1>{userName && `${userName}`}</h1>
+                    {userName && <h2 className="level">Level {level}</h2>} {/* Mostra o nível */}
+                </div>
+                <p>{totalStars}</p>
+                <img src={starImage} alt="Estrela" className="star-hub" />
+            </div>          
+
 
             {/* Componente de carrossel com funcionalidades de navegação e seleção de nível */}
             <ThirdModeCarousel 
