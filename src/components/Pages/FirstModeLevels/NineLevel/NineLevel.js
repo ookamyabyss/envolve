@@ -4,27 +4,31 @@ import clickSound from '../../../../assets/sounds/click.mp3';
 import itemFoundSound from '../../../../assets/sounds/success.mp3';
 import starImage from '../../../../assets/stars/star.png';
 import starGrayImage from '../../../../assets/stars/star-gray.png';
-import backgroundImage from '../../../../assets/background_levels/FirstModeNine_Ten.png'; // Background para a fase 7
-import lockIcon from '../../../../assets/icons/lock.png'; // Ícone de cadeado
+import backgroundImage from '../../../../assets/background_levels/FirstModeNine_Ten.png'; 
+import lockIcon from '../../../../assets/icons/lock.png'; 
 import './NineLevel.css';
 
 const NineLevel = () => {
-    const navigate = useNavigate();
-    const [items, setItems] = useState([]);
-    const [itemsToFind, setItemsToFind] = useState([]);
-    const [foundItems, setFoundItems] = useState([]);
+    const navigate = useNavigate(); // Hook para navegação entre páginas
+
+    // Estado do nível, inicializado com 1
+    const [level, setLevel] = useState(1);
+
+    // Estados do componente
+    const [items, setItems] = useState([]); // Itens disponíveis para seleção
+    const [itemsToFind, setItemsToFind] = useState([]); // Itens que o jogador deve encontrar
+    const [foundItems, setFoundItems] = useState([]); // Itens que o jogador já encontrou
     const [lockedItems, setLockedItems] = useState([]); // Itens bloqueados
-    const [timeRemaining, setTimeRemaining] = useState(180);
-    const [gameStatus, setGameStatus] = useState('playing');
-    const [isPaused, setIsPaused] = useState(false);
-    const [hintItem, setHintItem] = useState(null);
-    const [stars, setStars] = useState(0);
+    const [timeRemaining, setTimeRemaining] = useState(180); // Inicializa com um valor padrão
+    const [gameStatus, setGameStatus] = useState('playing'); // Status do jogo
+    const [isPaused, setIsPaused] = useState(false); // Controle de pausa
+    const [hintItem, setHintItem] = useState(null); // Item de dica
+    const [stars, setStars] = useState(0); // Contador de estrelas
     const [hintsUsed, setHintsUsed] = useState(0); // Usar estado para controlar as dicas
     const [showHintLimitMessage, setShowHintLimitMessage] = useState(false); // Estado para controlar a exibição da mensagem de limite
-
     const [totalStars, setTotalStars] = useState(0);
-    const [level, setLevel] = useState(1);
-    const MAX_HINTS = 2 + level - 1;
+
+    const MAX_HINTS = 2 + level - 1; // Dicas permitidas ajustadas pelo nível
 
     // Função para calcular o nível com base nas estrelas
     const calculateLevel = (stars) => {
@@ -56,8 +60,9 @@ const NineLevel = () => {
     // Função que roda ao montar o componente para atualizar totalStars e o nível
     useEffect(() => {
         const starsFromStorage = getTotalStars();
-        setTotalStars(starsFromStorage);
-        setLevel(calculateLevel(starsFromStorage)); // Calcula o nível inicial
+        const currentLevel = calculateLevel(starsFromStorage);
+        setLevel(currentLevel);
+        setTimeRemaining(180 + (currentLevel - 1) * 30); // Ajusta o tempo inicial baseado no nível
     }, []);
 
     const handleFinishLevel = (earnedStars) => {
@@ -66,7 +71,6 @@ const NineLevel = () => {
         setLevel(calculateLevel(updatedStars)); // Atualiza o nível após concluir o nível
     };
 
-
     // Função para carregar as imagens dos itens
     const importAll = (r) => {
         return r.keys().map((fileName) => ({
@@ -74,7 +78,8 @@ const NineLevel = () => {
             image: r(fileName)
         }));
     };
-
+    
+    // Carrega todas as imagens dos itens disponíveis
     const allItems = importAll(require.context('../../../../assets/itensFirstMode', false, /\.(png|jpe?g|svg)$/));
 
     useEffect(() => {
@@ -112,6 +117,7 @@ const NineLevel = () => {
         initializeGame();
     }, []);
 
+    // Controla o temporizador do jogo
     useEffect(() => {
         // Controla o temporizador do jogo
         if (gameStatus === 'playing' && timeRemaining > 0 && !isPaused) {
@@ -151,15 +157,18 @@ const NineLevel = () => {
         }
     };    
 
+    // Função para tocar um som
     const playSound = (soundFile) => {
         const audio = new Audio(soundFile);
         audio.play();
     };
 
+    // Função para tocar o som quando um item é encontrado
     const playItemFoundSound = () => {
         playSound(itemFoundSound);
     };
 
+    // Calcula o número de estrelas com base no tempo gasto
     const calculateStars = (timeRemaining, totalTime, hintsUsed) => {
         let calculatedStars = 1; // O jogador sempre começa com 1 estrela
         const percentageTimeLeft = (timeRemaining / totalTime) * 100;
@@ -175,6 +184,7 @@ const NineLevel = () => {
         return calculatedStars; // Retorna o número de estrelas calculadas
     }; 
 
+    // Função para reiniciar o nível
     const restartLevel = () => {
         // Reinicia o jogo mantendo o estado original
         const shuffledItems = allItems.sort(() => 0.5 - Math.random()).slice(0, 60);
@@ -187,7 +197,7 @@ const NineLevel = () => {
         setItemsToFind(Array.from(itemsToFindSet));
     
         setFoundItems([]);
-        setTimeRemaining(180);
+        setTimeRemaining(180 + (level - 1) * 30); // Ajusta o tempo baseado no nível
         setGameStatus('playing');
         setIsPaused(false);
         setHintItem(null);
@@ -203,32 +213,38 @@ const NineLevel = () => {
         setLockedItems(Array.from(lockedItemsSet));
     };
 
+    // Função para ir ao menu principal
     const goToMenu = () => {
         playSound(clickSound);
         navigate("/first-mode");
     };
 
+    // Função para avançar para o próximo nível
     const goToNextLevel = () => {
         playSound(clickSound);
         navigate('/first-mode-level/10');
     };
 
+    // Formatação do tempo restante no formato MM:SS
     const formatTime = (time) => {
         const minutes = Math.floor(time / 60).toString().padStart(2, '0');
         const seconds = (time % 60).toString().padStart(2, '0');
         return `${minutes}:${seconds}`;
     };
 
+    // Função para pausar o jogo
     const handlePause = () => {
         playSound(clickSound);
         setIsPaused(true);
     };
   
+    // Função para continuar o jogo após a pausa
     const handleContinue = () => {
         playSound(clickSound);
         setIsPaused(false);
     };
 
+    // Função para exibir uma dica
     const handleHint = () => {
         playSound(clickSound);
 
@@ -247,6 +263,7 @@ const NineLevel = () => {
         }
     };
 
+    // Função para renderizar as estrelas baseadas no desempenho do jogador
     const renderStars = () => {
         const totalStars = 3;
         const starsArray = [];
@@ -264,6 +281,7 @@ const NineLevel = () => {
 
         return <div className="star-feedback">{starsArray}</div>;
     };
+
 
     return (
         <div className={`level-container ${isPaused ? 'paused' : ''}`} style={{ backgroundImage: `url(${backgroundImage})` }}>

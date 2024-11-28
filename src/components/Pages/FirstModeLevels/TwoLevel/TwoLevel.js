@@ -10,21 +10,23 @@ import './TwoLevel.css'; // Arquivo de estilos do nível
 const TwoLevel = () => {
     const navigate = useNavigate(); // Hook para navegação entre páginas
 
+    // Estado do nível, inicializado com 1
+    const [level, setLevel] = useState(1);
+    
     // Estados do componente
     const [items, setItems] = useState([]); // Itens disponíveis para seleção
     const [itemsToFind, setItemsToFind] = useState([]); // Itens que o jogador deve encontrar
     const [foundItems, setFoundItems] = useState([]); // Itens que o jogador já encontrou
-    const [timeRemaining, setTimeRemaining] = useState(300); // Tempo restante do jogo (em segundos)
-    const [gameStatus, setGameStatus] = useState('playing'); // Status do jogo: 'playing', 'won', 'lost'
-    const [isPaused, setIsPaused] = useState(false); // Controle de pausa do jogo
+    const [timeRemaining, setTimeRemaining] = useState(300); // Inicializa com um valor padrão
+    const [gameStatus, setGameStatus] = useState('playing'); // Status do jogo
+    const [isPaused, setIsPaused] = useState(false); // Controle de pausa
     const [hintItem, setHintItem] = useState(null); // Item de dica
     const [stars, setStars] = useState(0); // Contador de estrelas
-    const [hintsUsed, setHintsUsed] = useState(0); // Usar estado para controlar as dicas
-    const [showHintLimitMessage, setShowHintLimitMessage] = useState(false); // Estado para controlar a exibição da mensagem de limite
-
+    const [hintsUsed, setHintsUsed] = useState(0); // Controle de dicas usadas
+    const [showHintLimitMessage, setShowHintLimitMessage] = useState(false); // Mensagem de limite
     const [totalStars, setTotalStars] = useState(0);
-    const [level, setLevel] = useState(1);
-    const MAX_HINTS = 6 + level - 1;
+    
+    const MAX_HINTS = 6 + (level - 1); // Dicas permitidas ajustadas pelo nível
 
     // Função para calcular o nível com base nas estrelas
     const calculateLevel = (stars) => {
@@ -40,7 +42,6 @@ const TwoLevel = () => {
     };
 
     // Função para recuperar a contagem de estrelas do sessionStorage
-
     const getTotalStars = () => {
         const stars = sessionStorage.getItem('totalStars');
         return stars ? parseInt(stars, 10) : 0;
@@ -57,8 +58,9 @@ const TwoLevel = () => {
     // Função que roda ao montar o componente para atualizar totalStars e o nível
     useEffect(() => {
         const starsFromStorage = getTotalStars();
-        setTotalStars(starsFromStorage);
-        setLevel(calculateLevel(starsFromStorage)); // Calcula o nível inicial
+        const currentLevel = calculateLevel(starsFromStorage);
+        setLevel(currentLevel);
+        setTimeRemaining(300 + (currentLevel - 1) * 30); // Ajusta o tempo inicial baseado no nível
     }, []);
 
     const handleFinishLevel = (earnedStars) => {
@@ -161,7 +163,7 @@ const TwoLevel = () => {
         setItemsToFind(Array.from(itemsToFindSet));
 
         setFoundItems([]);
-        setTimeRemaining(300); // Reseta o tempo do jogo
+        setTimeRemaining(300 + (level - 1) * 30); // Ajusta o tempo baseado no nível
         setGameStatus('playing'); // Reinicia o status do jogo
         setIsPaused(false);
         setHintItem(null);

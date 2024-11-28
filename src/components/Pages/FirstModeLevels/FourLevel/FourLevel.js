@@ -8,23 +8,27 @@ import backgroundImage from '../../../../assets/background_levels/FirstModeThree
 import './FourLevel.css';
 
 const FourLevel = () => {
-    const navigate = useNavigate();
-    const [items, setItems] = useState([]);
-    const [itemsToFind, setItemsToFind] = useState([]);
-    const [foundItems, setFoundItems] = useState([]);
-    const [timeRemaining, setTimeRemaining] = useState(480);
-    const [gameStatus, setGameStatus] = useState('playing');
-    const [isPaused, setIsPaused] = useState(false);
-    const [hintItem, setHintItem] = useState(null);
-    const [stars, setStars] = useState(0);
+    const navigate = useNavigate(); // Hook para navegação entre páginas
+
+    // Estado do nível, inicializado com 1
+    const [level, setLevel] = useState(1);
+
+    // Estados do componente
+    const [items, setItems] = useState([]); // Itens disponíveis para seleção
+    const [itemsToFind, setItemsToFind] = useState([]); // Itens que o jogador deve encontrar
+    const [foundItems, setFoundItems] = useState([]); // Itens que o jogador já encontrou
+    const [timeRemaining, setTimeRemaining] = useState(480); // Inicializa com um valor padrão
+    const [gameStatus, setGameStatus] = useState('playing'); // Status do jogo
+    const [isPaused, setIsPaused] = useState(false); // Controle de pausa
+    const [hintItem, setHintItem] = useState(null); // Item de dica
+    const [stars, setStars] = useState(0); // Contador de estrelas
     const [itemVisibility, setItemVisibility] = useState({});
     const [visibilityInterval, setVisibilityInterval] = useState(null);
     const [hintsUsed, setHintsUsed] = useState(0); // Usar estado para controlar as dicas
     const [showHintLimitMessage, setShowHintLimitMessage] = useState(false); // Estado para controlar a exibição da mensagem de limite
-
     const [totalStars, setTotalStars] = useState(0);
-    const [level, setLevel] = useState(1);
-    const MAX_HINTS = 4 + level - 1;
+
+    const MAX_HINTS = 4 + level - 1; // Dicas permitidas ajustadas pelo nível
 
     // Função para calcular o nível com base nas estrelas
     const calculateLevel = (stars) => {
@@ -56,8 +60,9 @@ const FourLevel = () => {
     // Função que roda ao montar o componente para atualizar totalStars e o nível
     useEffect(() => {
         const starsFromStorage = getTotalStars();
-        setTotalStars(starsFromStorage);
-        setLevel(calculateLevel(starsFromStorage)); // Calcula o nível inicial
+        const currentLevel = calculateLevel(starsFromStorage);
+        setLevel(currentLevel);
+        setTimeRemaining(480 + (currentLevel - 1) * 30); // Ajusta o tempo inicial baseado no nível
     }, []);
 
     const handleFinishLevel = (earnedStars) => {
@@ -74,6 +79,7 @@ const FourLevel = () => {
         }));
     };
 
+    // Carrega todas as imagens dos itens disponíveis
     const allItems = importAll(require.context('../../../../assets/itensFirstMode', false, /\.(png|jpe?g|svg)$/));
 
     useEffect(() => {
@@ -123,6 +129,7 @@ const FourLevel = () => {
         return () => clearInterval(visibilityInterval);
     }, [isPaused, gameStatus, items]);
 
+    // Controla o temporizador do jogo
     useEffect(() => {
         // Controla o temporizador do jogo
         if (gameStatus === 'playing' && timeRemaining > 0 && !isPaused) {
@@ -135,6 +142,7 @@ const FourLevel = () => {
         }
     }, [timeRemaining, gameStatus, isPaused]);
 
+    // Função para lidar com o clique em um item
     const handleItemClick = (item) => {
         if (itemsToFind.includes(item) && !foundItems.includes(item)) {
             const updatedFoundItems = [...foundItems, item];
@@ -150,15 +158,18 @@ const FourLevel = () => {
         }
     };
 
+    // Função para tocar um som
     const playSound = (soundFile) => {
         const audio = new Audio(soundFile);
         audio.play();
     };
 
+    // Função para tocar o som quando um item é encontrado
     const playItemFoundSound = () => {
         playSound(itemFoundSound);
     };
 
+    // Calcula o número de estrelas com base no tempo gasto
     const calculateStars = (timeRemaining, totalTime, hintsUsed) => {
         let calculatedStars = 1; // O jogador sempre começa com 1 estrela
         const percentageTimeLeft = (timeRemaining / totalTime) * 100;
@@ -172,8 +183,9 @@ const FourLevel = () => {
     
         setStars(calculatedStars); // Atualiza o estado com o número de estrelas
         return calculatedStars; // Retorna o número de estrelas calculadas
-    };  
+    };
 
+    // Função para reiniciar o nível
     const restartLevel = () => {
         // Reinicia o jogo mantendo o estado original de visibilidade e tempo
         const shuffledItems = allItems.sort(() => 0.5 - Math.random()).slice(0, 60);
@@ -186,7 +198,7 @@ const FourLevel = () => {
         setItemsToFind(Array.from(itemsToFindSet));
 
         setFoundItems([]);
-        setTimeRemaining(480);
+        setTimeRemaining(480 + (level - 1) * 30); // Ajusta o tempo baseado no nível
         setGameStatus('playing');
         setIsPaused(false);
         setHintItem(null);
@@ -200,22 +212,26 @@ const FourLevel = () => {
         setItemVisibility(visibility);
     };
 
+    // Função para ir ao menu principal
     const goToMenu = () => {
         playSound(clickSound);
         navigate("/first-mode");
     };
 
+    // Função para avançar para o próximo nível
     const goToNextLevel = () => {
         playSound(clickSound);
         navigate('/first-mode-level/5');
     };
 
+    // Formatação do tempo restante no formato MM:SS
     const formatTime = (time) => {
         const minutes = Math.floor(time / 60).toString().padStart(2, '0');
         const seconds = (time % 60).toString().padStart(2, '0');
         return `${minutes}:${seconds}`;
     };
 
+    // Função para pausar o jogo
     const handlePause = () => {
         playSound(clickSound);
         setIsPaused(true);
@@ -231,6 +247,7 @@ const FourLevel = () => {
         });
     };
 
+    // Função para continuar o jogo após a pausa
     const handleContinue = () => {
         playSound(clickSound);
         setIsPaused(false);
@@ -255,6 +272,7 @@ const FourLevel = () => {
         }
     };
 
+    // Função para renderizar as estrelas baseadas no desempenho do jogador
     const renderStars = () => {
         const totalStars = 3;
         const starsArray = [];

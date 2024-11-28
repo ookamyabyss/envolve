@@ -10,21 +10,23 @@ import './OneLevel.css'; // Arquivo de estilos do nível
 const OneLevel = () => {
     const navigate = useNavigate(); // Hook para navegação entre páginas
 
+    // Estado do nível, inicializado com 1
+    const [level, setLevel] = useState(1);
+    
     // Estados do componente
     const [items, setItems] = useState([]); // Itens disponíveis para seleção
     const [itemsToFind, setItemsToFind] = useState([]); // Itens que o jogador deve encontrar
     const [foundItems, setFoundItems] = useState([]); // Itens que o jogador já encontrou
-    const [timeRemaining, setTimeRemaining] = useState(480); // Tempo restante do jogo (em segundos)
-    const [gameStatus, setGameStatus] = useState('playing'); // Status do jogo: 'playing', 'won', 'lost'
-    const [isPaused, setIsPaused] = useState(false); // Controle de pausa do jogo
+    const [timeRemaining, setTimeRemaining] = useState(480); // Inicializa com um valor padrão
+    const [gameStatus, setGameStatus] = useState('playing'); // Status do jogo
+    const [isPaused, setIsPaused] = useState(false); // Controle de pausa
     const [hintItem, setHintItem] = useState(null); // Item de dica
     const [stars, setStars] = useState(0); // Contador de estrelas
-    const [hintsUsed, setHintsUsed] = useState(0); // Usar estado para controlar as dicas
-    const [showHintLimitMessage, setShowHintLimitMessage] = useState(false); // Estado para controlar a exibição da mensagem de limite
-    
+    const [hintsUsed, setHintsUsed] = useState(0); // Controle de dicas usadas
+    const [showHintLimitMessage, setShowHintLimitMessage] = useState(false); // Mensagem de limite
     const [totalStars, setTotalStars] = useState(0);
-    const [level, setLevel] = useState(1);
-    const MAX_HINTS = 6 + level - 1;
+    
+    const MAX_HINTS = 6 + (level - 1); // Dicas permitidas ajustadas pelo nível
     
     // Função para calcular o nível com base nas estrelas
     const calculateLevel = (stars) => {
@@ -56,8 +58,9 @@ const OneLevel = () => {
     // Função que roda ao montar o componente para atualizar totalStars e o nível
     useEffect(() => {
         const starsFromStorage = getTotalStars();
-        setTotalStars(starsFromStorage);
-        setLevel(calculateLevel(starsFromStorage)); // Calcula o nível inicial
+        const currentLevel = calculateLevel(starsFromStorage);
+        setLevel(currentLevel);
+        setTimeRemaining(480 + (currentLevel - 1) * 30); // Ajusta o tempo inicial baseado no nível
     }, []);
 
     const handleFinishLevel = (earnedStars) => {
@@ -149,25 +152,24 @@ const OneLevel = () => {
 
     // Função para reiniciar o nível
     const restartLevel = () => {
-        // Reinicializa os itens e o estado do jogo
         const shuffledItems = allItems.sort(() => 0.5 - Math.random()).slice(0, 60);
         setItems(shuffledItems);
-
+    
         const itemsToFindSet = new Set();
         while (itemsToFindSet.size < 10) {
             itemsToFindSet.add(shuffledItems[Math.floor(Math.random() * shuffledItems.length)]);
         }
         setItemsToFind(Array.from(itemsToFindSet));
-
+    
         setFoundItems([]);
-        setTimeRemaining(480); // Reseta o tempo do jogo
-        setGameStatus('playing'); // Reinicia o status do jogo
+        setTimeRemaining(480 + (level - 1) * 30); // Ajusta o tempo baseado no nível
+        setGameStatus('playing');
         setIsPaused(false);
         setHintItem(null);
-        setStars(0); // Reseta as estrelas;
-        setHintsUsed(0); // Reseta o número de dicas usadas
+        setStars(0);
+        setHintsUsed(0);
     };
-
+    
     // Função para ir ao menu principal
     const goToMenu = () => {
         playSound(clickSound);
