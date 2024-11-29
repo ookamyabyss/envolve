@@ -1,274 +1,297 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import clickSound from '../../../../assets/sounds/click.mp3';
-import successSound from '../../../../assets/sounds/success.mp3';
-import starImage from '../../../../assets/stars/star.png';
-import starGrayImage from '../../../../assets/stars/star-gray.png';
-import backgroundImage from '../../../../assets/background_levels/SecondModeOne_Two.png';
-import './TwoLevel.css';
+import clickSound from '../../../../assets/sounds/click.mp3'; // Som para cliques
+import successSound from '../../../../assets/sounds/success.mp3'; // Som para um acerto
+import starImage from '../../../../assets/stars/star.png'; // Imagem da estrela colorida
+import starGrayImage from '../../../../assets/stars/star-gray.png'; // Imagem da estrela cinza
+import backgroundImage from '../../../../assets/background_levels/SecondModeOne_Two.png'; // Imagem de fundo do nível
+import './TwoLevel.css'; // Arquivo de estilos do nível
 
 const TwoLevel = () => {
-  const navigate = useNavigate();
-  const todasPalavras = [
+    const navigate = useNavigate(); // Hook para navegação entre páginas
+
+    // Estado do nível, inicializado com 1
+    const [level, setLevel] = useState(1);
+  
+    const todasPalavras = [
     'BANANA', 'AMIGOS', 'GAROTO', 'FUTURO', 'ESCOLA', 'LIVROS', 'TREMES', 'JANELA', 'CARROS', 'PRATOS',
     'CASACO', 'SAPATO', 'OVELHA', 'CACHOS', 'OUTROS', 'PASSOS', 'CAMISA', 'MARCAS', 'VENTOS', 'BONECO',
     'LUCROS', 'BOVINO', 'FLORES', 'RUIDOS', 'CAMPOS', 'MANTOS', 'CANTOS', 'MESADA', 'QUADRO', 'BARCOS', 
     'LIMPOS', 'BATATA', 'TORRES', 'BOLHAS', 'JARDIM', 'PESSOA', 'ANIMAL', 'PONTOS', 'PESADO', 'CABRAS', 
     'TELHAS', 'GARFOS', 'QUEIJO', 'PAREDE', 'TORRES', 'FRUTOS', 'COELHO', 'TAPETE', 'PEDRAS', 'SALADA',
-    'BOTINA', 'MANGAS', 'VINHOS', 'TINTAS', 'CORDAS', 'GRANJA', 'CANETA', 'BOLHAS', 'CHAVES', 'QUENTE'];
-  
-  const [palavras, setPalavras] = useState([]); // Corrigido: estado para as palavras selecionadas
-  const [indicePalavraAtual, setIndicePalavraAtual] = useState(0);
-  const [textoDigitado, setTextoDigitado] = useState('');
-  const [palavrasDigitadas, setPalavrasDigitadas] = useState([]);
-  const [timeRemaining, setTimeRemaining] = useState(240);
-  const [gameStatus, setGameStatus] = useState('playing');
-  const [isPaused, setIsPaused] = useState(false);
-  const [hintPalavra, setHintPalavra] = useState(null);
-  const [stars, setStars] = useState(0);
-  const [highlightedSquares, setHighlightedSquares] = useState([]);
-  const [hintIndex, setHintIndex] = useState(0);
-  const [cursorPosition, setCursorPosition] = useState(0);
-  const [hintsUsed, setHintsUsed] = useState(0); // Número de dicas usadas
-  const [showHintLimitMessage, setShowHintLimitMessage] = useState(false); // Controle da exibição da mensagem de limite
-  
-  const [totalStars, setTotalStars] = useState(0);
-  const [level, setLevel] = useState(1);
-  const MAX_HINTS = 15 + level - 1; // Número máximo de dicas permitidas
+        'BOTINA', 'MANGAS', 'VINHOS', 'TINTAS', 'CORDAS', 'GRANJA', 'CANETA', 'BOLHAS', 'CHAVES', 'QUENTE'];
+    
+    // Estados do componente
+    const [palavras, setPalavras] = useState([]); // Lista de palavras selecionadas para o nível
+    const [indicePalavraAtual, setIndicePalavraAtual] = useState(0); // Índice da palavra que o jogador está digitando
+    const [textoDigitado, setTextoDigitado] = useState(''); // Texto digitado pelo jogador
+    const [palavrasDigitadas, setPalavrasDigitadas] = useState([]); // Palavras já digitadas corretamente
+    const [timeRemaining, setTimeRemaining] = useState(240); // Tempo restante do nível, em segundos
+    const [gameStatus, setGameStatus] = useState('playing'); // Status do jogo (e.g., jogando, pausado, finalizado)
+    const [isPaused, setIsPaused] = useState(false); // Indica se o jogo está pausado
+    const [hintPalavra, setHintPalavra] = useState(null); // Palavra ou informação de dica ativa
+    const [stars, setStars] = useState(0); // Estrelas conquistadas no nível atual
+    const [highlightedSquares, setHighlightedSquares] = useState([]); // Quadrados destacados (usados para mostrar dicas)
+    const [hintIndex, setHintIndex] = useState(0); // Índice da dica ativa
+    const [cursorPosition, setCursorPosition] = useState(0); // Posição do cursor no campo de entrada
+    const [hintsUsed, setHintsUsed] = useState(0); // Número de dicas utilizadas pelo jogador no nível
+    const [showHintLimitMessage, setShowHintLimitMessage] = useState(false); // Controle da exibição da mensagem de limite
+    const [totalStars, setTotalStars] = useState(0); // Total de estrelas acumuladas ao longo do jogo
 
-  // Função para calcular o nível com base nas estrelas
-  const calculateLevel = (stars) => {
-    let currentLevel = 1;
-    let starsNeeded = 10;
+    const MAX_HINTS = 15 + level - 1; // Número máximo de dicas permitidas
 
-    while (stars >= starsNeeded) {
-      currentLevel++;
-      starsNeeded += 15;
-    }
+    // Função para calcular o nível com base nas estrelas
+    const calculateLevel = (stars) => {
+        let currentLevel = 1;
+        let starsNeeded = 10;
 
-    return currentLevel;
-  };
-
-  // Função para recuperar a contagem de estrelas do sessionStorage
-  const getTotalStars = () => {
-    const stars = sessionStorage.getItem('totalStars');
-    return stars ? parseInt(stars, 10) : 0;
-  };
-
-  // Função para adicionar estrelas ao sessionStorage
-  const addStars = (stars) => {
-      const currentStars = getTotalStars();
-      const newTotal = currentStars + stars;
-      sessionStorage.setItem('totalStars', newTotal);
-      setTotalStars(newTotal); // Atualiza o estado local também
-  };
-
-  // Função que roda ao montar o componente para atualizar totalStars e o nível
-  useEffect(() => {
-    const starsFromStorage = getTotalStars();
-    setTotalStars(starsFromStorage);
-    setLevel(calculateLevel(starsFromStorage)); // Calcula o nível inicial
-  }, []);
-
-  const handleFinishLevel = (earnedStars) => {
-    addStars(earnedStars);
-    const updatedStars = getTotalStars();
-    setLevel(calculateLevel(updatedStars)); // Atualiza o nível após concluir o nível
-  };
-
-  //-----------
-
-  const selecionarPalavrasAleatorias = () => {
-    const palavrasSelecionadas = [];
-
-    // Enquanto houver menos de 4 palavras selecionadas, continua escolhendo
-    while (palavrasSelecionadas.length < 6) {
-      const indexAleatorio = Math.floor(Math.random() * todasPalavras.length);
-      const palavraSelecionada = todasPalavras[indexAleatorio];
-
-      // Evita adicionar palavras duplicadas
-      if (!palavrasSelecionadas.includes(palavraSelecionada)) {
-        palavrasSelecionadas.push(palavraSelecionada);
-      }
-    }
-
-    setPalavras(palavrasSelecionadas);
-  };
-
-  useEffect(() => {
-    selecionarPalavrasAleatorias(); // Seleciona novas palavras aleatórias ao iniciar o componente
-  }, []);
-
-  useEffect(() => {
-    const inputField = document.querySelector('.hidden-input');
-    if (inputField && !isPaused) {
-      inputField.focus();
-      inputField.setSelectionRange(textoDigitado.length, textoDigitado.length); // Coloca o cursor no final
-    }
-  }, [textoDigitado, isPaused]);
-
-  useEffect(() => {
-    // Atualiza a posição do cursor
-    setCursorPosition(textoDigitado.length);
-  }, [textoDigitado]);
-  
-  useEffect(() => {
-    if (gameStatus === 'playing' && timeRemaining > 0 && !isPaused) {
-      const timer = setInterval(() => {
-        setTimeRemaining((prevTime) => prevTime - 1);
-      }, 1000);
-      return () => clearInterval(timer);
-    } else if (timeRemaining === 0 && gameStatus === 'playing') {
-      setGameStatus('lost');
-    }
-  }, [timeRemaining, gameStatus, isPaused]);
-
-  useEffect(() => {
-    if (textoDigitado.length === 6) {
-      const palavraAtual = palavras.find((p) => p === textoDigitado.toUpperCase());
-      if (palavraAtual) {
-        setPalavrasDigitadas([...palavrasDigitadas, textoDigitado]);
-        setHighlightedSquares([...highlightedSquares, textoDigitado]);
-        playSuccessSound();
-
-        setHintIndex(0);
-
-        if (palavrasDigitadas.length + 1 === palavras.length) {
-          const earnedStars = calculateStars(timeRemaining, 240, hintsUsed); // Passando parâmetros corretos
-          handleFinishLevel(earnedStars); // Salvando estrelas
-          setGameStatus('won');
+        while (stars >= starsNeeded) {
+        currentLevel++;
+        starsNeeded += 15;
         }
-       
-        setTextoDigitado('');
-      } else {
-        setTextoDigitado('');
-      }
-    }
-  }, [textoDigitado, palavrasDigitadas, highlightedSquares]);
 
-  const playSound = (soundFile) => {
-    const audio = new Audio(soundFile);
-    audio.play();
-  };
+        return currentLevel;
+    };
 
-  const playSuccessSound = () => {
-    playSound(successSound);
-  };
+    // Função para recuperar a contagem de estrelas do sessionStorage
+    const getTotalStars = () => {
+        const stars = sessionStorage.getItem('totalStars');
+        return stars ? parseInt(stars, 10) : 0;
+    };
 
-  const calculateStars = (timeRemaining, totalTime, hintsUsed) => {
-    let calculatedStars = 1; // O jogador sempre começa com 1 estrela
-    const percentageTimeLeft = (timeRemaining / totalTime) * 100;
+    // Função para adicionar estrelas ao sessionStorage
+    const addStars = (stars) => {
+        const currentStars = getTotalStars();
+        const newTotal = currentStars + stars;
+        sessionStorage.setItem('totalStars', newTotal);
+        setTotalStars(newTotal); // Atualiza o estado local também
+    };
 
-    if (percentageTimeLeft >= 50) {
-        calculatedStars = 2; // Se restar 50% ou mais do tempo, ganha 2 estrelas
-    }
-    if (percentageTimeLeft >= 75 && hintsUsed === 0) {
-        calculatedStars = 3; // Se restar 75% ou mais do tempo e não usou dicas, ganha 3 estrelas
-    }
+    // Função que roda ao montar o componente para atualizar totalStars e o nível
+    useEffect(() => {
+        const starsFromStorage = getTotalStars();
+        const currentLevel = calculateLevel(starsFromStorage);
+        setLevel(currentLevel);
+        setTimeRemaining(240 + (currentLevel - 1) * 30); // Ajusta o tempo inicial baseado no nível
+    }, []);
 
-    setStars(calculatedStars); // Atualiza o estado com o número de estrelas
-    return calculatedStars; // Retorna o número de estrelas calculadas
-  }; 
+    // Função que finaliza o nível e atualiza o progresso do jogador
+    const handleFinishLevel = (earnedStars) => {
+        addStars(earnedStars);
+        const updatedStars = getTotalStars();
+        setLevel(calculateLevel(updatedStars)); // Atualiza o nível após concluir o nível
+    };
 
-  const handleClickOnSquare = () => {
-    document.querySelector('.hidden-input').focus();
-  };
+    // Função para selecionar palavras aleatórias para o nível
+    const selecionarPalavrasAleatorias = () => {
+        const palavrasSelecionadas = [];
 
-  const restartLevel = () => {
-    setIndicePalavraAtual(0);
-    setPalavrasDigitadas([]);
-    setTimeRemaining(240);
-    setGameStatus('playing');
-    setIsPaused(false);
-    setHintPalavra(null);
-    setStars(0);
-    setHighlightedSquares([]);
-    setTextoDigitado('');
-    setHintIndex(0);
-    selecionarPalavrasAleatorias();
-    setHintsUsed(0); // Reseta o número de dicas usadas
-    // Focar no campo de entrada após reiniciar
-    setTimeout(() => {
-      document.querySelector('.hidden-input').focus();
-    }, 0); // Use um timeout de 0 para garantir que isso ocorra após o estado ser atualizado
-  };
+        // Enquanto houver menos de 4 palavras selecionadas, continua escolhendo
+        while (palavrasSelecionadas.length < 6) {
+        const indexAleatorio = Math.floor(Math.random() * todasPalavras.length);
+        const palavraSelecionada = todasPalavras[indexAleatorio];
 
-  const goToMenu = () => {
-    playSound(clickSound);
-    navigate('/second-mode');
-  };
+        // Evita adicionar palavras duplicadas
+        if (!palavrasSelecionadas.includes(palavraSelecionada)) {
+            palavrasSelecionadas.push(palavraSelecionada);
+        }
+        }
 
-  const goToNextLevel = () => {
-    playSound(clickSound);
-    navigate('/second-mode-level/3');
-  };
+        setPalavras(palavrasSelecionadas);
+    };
 
-  const formatTime = (time) => {
-    const minutes = Math.floor(time / 60).toString().padStart(2, '0');
-    const seconds = (time % 60).toString().padStart(2, '0');
-    return `${minutes}:${seconds}`;
-  };
+    // useEffect para selecionar palavras aleatórias ao montar o componente
+    useEffect(() => {
+        selecionarPalavrasAleatorias(); // Seleciona novas palavras aleatórias ao iniciar o componente
+    }, []);
 
-  const handlePause = () => {
-    playSound(clickSound);
-    setIsPaused(true);
-  };
+    // useEffect para focar no campo de entrada sempre que o texto digitado ou o status de pausa mudar
+    useEffect(() => {
+        const inputField = document.querySelector('.hidden-input');
+        if (inputField && !isPaused) {
+        inputField.focus();
+        inputField.setSelectionRange(textoDigitado.length, textoDigitado.length); // Coloca o cursor no final
+        }
+    }, [textoDigitado, isPaused]);
 
-  const handleContinue = () => {
-    playSound(clickSound);
-    setIsPaused(false);
-  };
+    // Atualiza a posição do cursor com base no texto digitado
+    useEffect(() => {
+        // Atualiza a posição do cursor
+        setCursorPosition(textoDigitado.length);
+    }, [textoDigitado]);
 
-  const handleHint = () => {
-    playSound(clickSound);
+    // Controla o temporizador do jogo
+    useEffect(() => {
+        if (gameStatus === 'playing' && timeRemaining > 0 && !isPaused) {
+        const timer = setInterval(() => {
+            setTimeRemaining((prevTime) => prevTime - 1);
+        }, 1000);
+        return () => clearInterval(timer);
+        } else if (timeRemaining === 0 && gameStatus === 'playing') {
+        setGameStatus('lost');
+        }
+    }, [timeRemaining, gameStatus, isPaused]);
 
-    if (hintsUsed < MAX_HINTS) {
-        let palavraEmProgresso = palavras.find(
-            (p) => p.startsWith(textoDigitado) && !palavrasDigitadas.includes(p)
-        );
+    // Verifica se o texto digitado corresponde a uma palavra válida
+    useEffect(() => {
+        if (textoDigitado.length === 6) {
+        const palavraAtual = palavras.find((p) => p === textoDigitado.toUpperCase());
+        if (palavraAtual) {
+            setPalavrasDigitadas([...palavrasDigitadas, textoDigitado]);
+            setHighlightedSquares([...highlightedSquares, textoDigitado]);
+            playSuccessSound();
 
-        if (!palavraEmProgresso) {
-            palavraEmProgresso = palavras.find((p) => !palavrasDigitadas.includes(p));
+            setHintIndex(0);
+
+            if (palavrasDigitadas.length + 1 === palavras.length) {
+            const earnedStars = calculateStars(timeRemaining, 240, hintsUsed); // Passando parâmetros corretos
+            handleFinishLevel(earnedStars); // Salvando estrelas
+            setGameStatus('won');
+            }
+        
+            setTextoDigitado('');
+        } else {
             setTextoDigitado('');
         }
-
-        if (palavraEmProgresso) {
-            const letrasRestantes = palavraEmProgresso.slice(textoDigitado.length);
-            if (letrasRestantes.length > 0) {
-                const novaLetra = letrasRestantes[0];
-                setTextoDigitado((prevTexto) => prevTexto + novaLetra);
-                setHintsUsed(hintsUsed + 1); // Incrementa o número de dicas usadas
-                setTimeout(() => setHintPalavra(null), 3000);
-            }
         }
-    } else {
-        // Exibe a mensagem de limite de dicas atingido
-        setShowHintLimitMessage(true);
+    }, [textoDigitado, palavrasDigitadas, highlightedSquares]);
+
+    // Função para tocar um som
+    const playSound = (soundFile) => {
+        const audio = new Audio(soundFile);
+        audio.play();
+    };
+
+    // Função para tocar o som quando e feito um acerto
+    const playSuccessSound = () => {
+        playSound(successSound);
+    };
+
+    // Calcula as Estrelas 
+    const calculateStars = (timeRemaining, totalTime, hintsUsed) => {
+        let calculatedStars = 1; // O jogador sempre começa com 1 estrela
+        const percentageTimeLeft = (timeRemaining / totalTime) * 100;
+
+        if (percentageTimeLeft >= 50) {
+            calculatedStars = 2; // Se restar 50% ou mais do tempo, ganha 2 estrelas
+        }
+        if (percentageTimeLeft >= 75 && hintsUsed === 0) {
+            calculatedStars = 3; // Se restar 75% ou mais do tempo e não usou dicas, ganha 3 estrelas
+        }
+
+        setStars(calculatedStars); // Atualiza o estado com o número de estrelas
+        return calculatedStars; // Retorna o número de estrelas calculadas
+    }; 
+
+    // Função que foca no campo de entrada quando um quadrado é clicado
+    const handleClickOnSquare = () => {
+        document.querySelector('.hidden-input').focus();
+    };
+
+    // Função para reiniciar o nível
+    const restartLevel = () => {
+        setIndicePalavraAtual(0);
+        setPalavrasDigitadas([]);
+        setTimeRemaining(240 + (level - 1) * 30); // Ajusta o tempo baseado no nível
+        setGameStatus('playing');
+        setIsPaused(false);
+        setHintPalavra(null);
+        setStars(0);
+        setHighlightedSquares([]);
+        setTextoDigitado('');
+        setHintIndex(0);
+        selecionarPalavrasAleatorias();
+        setHintsUsed(0); // Reseta o número de dicas usadas
+        // Focar no campo de entrada após reiniciar
         setTimeout(() => {
-            setShowHintLimitMessage(false); // Remove a mensagem após 3 segundos
-            // Foca no campo de entrada após exibir a mensagem
-            document.querySelector('.hidden-input').focus();
-        }, 3000);
-    }
-  };
+        document.querySelector('.hidden-input').focus();
+        }, 0); // Use um timeout de 0 para garantir que isso ocorra após o estado ser atualizado
+    };
 
-  const renderStars = () => {
-    const totalStars = 3;
-    const starsArray = [];
+    // Função para ir ao menu principal
+    const goToMenu = () => {
+        playSound(clickSound);
+        navigate('/second-mode');
+    };
 
-    for (let i = 0; i < totalStars; i++) {
-      starsArray.push(
-        <img key={i} src={i < stars ? starImage : starGrayImage} alt="Estrela" className="star-icon" />
-      );
-    }
+    // Função para avançar para o próximo nível
+    const goToNextLevel = () => {
+        playSound(clickSound);
+        navigate('/second-mode-level/3');
+    };
 
-    return <div className="star-feedback">{starsArray}</div>;
-  };
+    // Formatação do tempo restante no formato MM:SS
+    const formatTime = (time) => {
+        const minutes = Math.floor(time / 60).toString().padStart(2, '0');
+        const seconds = (time % 60).toString().padStart(2, '0');
+        return `${minutes}:${seconds}`;
+    };
 
-  const handleInputChange = (e) => {
-    setTextoDigitado(e.target.value.toUpperCase());
-    setCursorPosition(e.target.value.length); // Atualiza a posição do cursor
-  };
+    // Função para pausar o jogo
+    const handlePause = () => {
+        playSound(clickSound);
+        setIsPaused(true);
+    };
+
+    // Função para continuar o jogo após a pausa
+    const handleContinue = () => {
+        playSound(clickSound);
+        setIsPaused(false);
+    };
+
+    // Função para exibir uma dica
+    const handleHint = () => {
+        playSound(clickSound);
+
+        if (hintsUsed < MAX_HINTS) {
+            let palavraEmProgresso = palavras.find(
+                (p) => p.startsWith(textoDigitado) && !palavrasDigitadas.includes(p)
+            );
+
+            if (!palavraEmProgresso) {
+                palavraEmProgresso = palavras.find((p) => !palavrasDigitadas.includes(p));
+                setTextoDigitado('');
+            }
+
+            if (palavraEmProgresso) {
+                const letrasRestantes = palavraEmProgresso.slice(textoDigitado.length);
+                if (letrasRestantes.length > 0) {
+                    const novaLetra = letrasRestantes[0];
+                    setTextoDigitado((prevTexto) => prevTexto + novaLetra);
+                    setHintsUsed(hintsUsed + 1); // Incrementa o número de dicas usadas
+                    setTimeout(() => setHintPalavra(null), 3000);
+                }
+            }
+        } else {
+            // Exibe a mensagem de limite de dicas atingido
+            setShowHintLimitMessage(true);
+            setTimeout(() => {
+                setShowHintLimitMessage(false); // Remove a mensagem após 3 segundos
+                // Foca no campo de entrada após exibir a mensagem
+                document.querySelector('.hidden-input').focus();
+            }, 3000);
+        }
+    };
+
+    // Função para renderizar as estrelas baseadas no desempenho do jogador
+    const renderStars = () => {
+        const totalStars = 3;
+        const starsArray = [];
+
+        for (let i = 0; i < totalStars; i++) {
+        starsArray.push(
+            <img key={i} src={i < stars ? starImage : starGrayImage} alt="Estrela" className="star-icon" />
+        );
+        }
+
+        return <div className="star-feedback">{starsArray}</div>;
+    };
+
+    // Função que lida com alterações no campo de entrada
+    const handleInputChange = (e) => {
+        setTextoDigitado(e.target.value.toUpperCase());
+        setCursorPosition(e.target.value.length); // Atualiza a posição do cursor
+    };
 
   return (
     <div className="level-container" style={{ backgroundImage: `url(${backgroundImage})` }}>

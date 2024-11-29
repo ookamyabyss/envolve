@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import clickSound from '../../../../assets/sounds/click.mp3';
-import itemFoundSound from '../../../../assets/sounds/success.mp3';
-import starImage from '../../../../assets/stars/star.png';
-import starGrayImage from '../../../../assets/stars/star-gray.png';
-import backgroundImage from '../../../../assets/background_levels/FirstModeNine_Ten.png'; 
-import lockIcon from '../../../../assets/icons/lock.png'; 
-import './NineLevel.css';
+import clickSound from '../../../../assets/sounds/click.mp3'; // Som para cliques
+import itemFoundSound from '../../../../assets/sounds/success.mp3'; // Som quando um item é encontrado
+import starImage from '../../../../assets/stars/star.png'; // Imagem da estrela colorida
+import starGrayImage from '../../../../assets/stars/star-gray.png'; // Imagem da estrela cinza
+import backgroundImage from '../../../../assets/background_levels/FirstModeNine_Ten.png'; // Imagem de fundo do nível
+import lockIcon from '../../../../assets/icons/lock.png'; // Imagem de cadeado
+import './NineLevel.css'; // Arquivo de estilos do nível
 
 const NineLevel = () => {
     const navigate = useNavigate(); // Hook para navegação entre páginas
