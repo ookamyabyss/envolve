@@ -8,7 +8,7 @@ import backgroundImage from '../../../../assets/background_levels/SecondModeThre
 import './FourLevel.css'; // Arquivo de estilos do nível
 
 const FourLevel = () => {
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // Hook para navegação entre páginas
 
     // Estado do nível, inicializado com 1
     const [level, setLevel] = useState(1);
@@ -77,7 +77,7 @@ const FourLevel = () => {
         setLevel(currentLevel);
         setTimeRemaining(300 + (currentLevel - 1) * 30); // Ajusta o tempo inicial baseado no nível
     }, []);
-    
+
     // Função que finaliza o nível e atualiza o progresso do jogador
     const handleFinishLevel = (earnedStars) => {
         addStars(earnedStars);

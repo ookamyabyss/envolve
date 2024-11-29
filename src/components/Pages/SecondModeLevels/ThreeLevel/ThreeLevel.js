@@ -8,7 +8,7 @@ import backgroundImage from '../../../../assets/background_levels/SecondModeThre
 import './ThreeLevel.css'; // Arquivo de estilos do nível
 
 const ThreeLevel = () => {
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // Hook para navegação entre páginas
 
     // Estado do nível, inicializado com 1
      const [level, setLevel] = useState(1);

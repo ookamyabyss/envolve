@@ -72,7 +72,7 @@ const OneLevel = () => {
         const starsFromStorage = getTotalStars();
         const currentLevel = calculateLevel(starsFromStorage);
         setLevel(currentLevel);
-        setTimeRemaining(480 + (currentLevel - 1) * 30); // Ajusta o tempo inicial baseado no nível
+        setTimeRemaining(300 + (currentLevel - 1) * 30); // Ajusta o tempo inicial baseado no nível
     }, []);
 
     // Função que finaliza o nível e atualiza o progresso do jogador

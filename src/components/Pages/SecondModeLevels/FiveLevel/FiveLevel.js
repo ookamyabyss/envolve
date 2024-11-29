@@ -8,7 +8,7 @@ import backgroundImage from '../../../../assets/background_levels/SecondModeFive
 import './FiveLevel.css'; // Arquivo de estilos do nível
 
 const FiveLevel = () => {
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // Hook para navegação entre páginas
 
     // Estado do nível, inicializado com 1
     const [level, setLevel] = useState(1);
@@ -76,7 +76,7 @@ const FiveLevel = () => {
         setLevel(currentLevel);
         setTimeRemaining(240 + (currentLevel - 1) * 30); // Ajusta o tempo inicial baseado no nível
     }, []);
-    
+
     // Função que finaliza o nível e atualiza o progresso do jogador
     const handleFinishLevel = (earnedStars) => {
         addStars(earnedStars);
