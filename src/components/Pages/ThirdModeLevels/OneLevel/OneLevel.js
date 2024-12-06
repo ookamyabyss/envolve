@@ -1,35 +1,75 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import clickSound from '../../../../assets/sounds/click.mp3';
-import successSound from '../../../../assets/sounds/success.mp3';
+import clickSound from '../../../../assets/sounds/click.mp3'; // Som para cliques
+import successSound from '../../../../assets/sounds/success.mp3'; // Som para escolhas certas
 import errorSound from '../../../../assets/sounds/click.mp3'; // Som para escolhas erradas
-import starImage from '../../../../assets/stars/star.png';
-import starGrayImage from '../../../../assets/stars/star-gray.png';
-import backgroundImage from '../../../../assets/background_levels/ThirdModeOne_Two.png';
-import './OneLevel.css';
+import starImage from '../../../../assets/stars/star.png'; // Imagem da estrela colorida
+import starGrayImage from '../../../../assets/stars/star-gray.png'; // Imagem da estrela cinza
+import backgroundImage from '../../../../assets/background_levels/ThirdModeOne_Two.png'; // Imagem de fundo do nível
+import './OneLevel.css'; // Arquivo de estilos do nível
 
 const OneLevel = () => {
+    // Estado do nível, inicializado com 1
+    const [level, setLevel] = useState(1);
+
     const navigate = useNavigate(); // Importa o hook useNavigate do React Router para permitir a navegação entre páginas
     const [timeRemaining, setTimeRemaining] = useState(480); // Estado que controla o tempo restante do nível, inicializado em 480 segundos (8 minutos)
     const [gameStatus, setGameStatus] = useState('playing'); // Estado que controla o status do jogo, iniciado como 'playing' (jogando)
     const [isPaused, setIsPaused] = useState(false); // Estado que indica se o jogo está pausado, iniciado como false
     const [stars, setStars] = useState(0); // Estado que armazena a quantidade de estrelas conquistadas
     const [hintsUsed, setHintsUsed] = useState(0); // Estado que registra o número de dicas usadas
-    const MAX_HINTS = 2; // Define o limite máximo de dicas que podem ser usadas
-    const [highlightShape, setHighlightShape] = useState(false); // Estado que controla o destaque da forma correta durante a utilização de dicas
     const [showHintLimitMessage, setShowHintLimitMessage] = useState(false); // Estado que controla a exibição da mensagem de limite de dicas atingido
     const [leftShapes, setLeftShapes] = useState([]); // Estado que armazena as formas exibidas à esquerda
     const [rightShapes, setRightShapes] = useState([]); // Estado que armazena as formas exibidas à direita
     const [selectedShape, setSelectedShape] = useState(null); // Estado que armazena a forma atualmente selecionada pelo jogador
-    const [correctShape, setCorrectShape] = useState('retangulo'); // Estado que armazena a forma correta para completar a imagem, inicializado como 'retangulo'
     const [correctShapes, setCorrectShapes] = useState([]); // Agora são 4 formas corretas
     const [selectedCorrectShapes, setSelectedCorrectShapes] = useState([]); // Armazena as formas corretas já selecionadas pelo jogador
     const [selectedIncorrectShapes, setSelectedIncorrectShapes] = useState([]); // Estado para armazenar formas incorretas
     const [highlightedShape, setHighlightedShape] = useState(null); // Forma destacada
 
+    const [totalStars, setTotalStars] = useState(0);
+
+
+    const MAX_HINTS = 2 + (level - 1); // Dicas permitidas ajustadas pelo nível
+
     // Lista de formas disponíveis que podem ser usadas no jogo
     const shapes = ['quadrado', 'elipse', 'circulo', 'retangulo', 'losango', 'paralelogramo', 'pentagono-2', 
                     'retangulo-2', 'oval', 'paralelogramo-simples'];
+
+    // Função para calcular o nível com base nas estrelas
+    const calculateLevel = (stars) => {
+        let currentLevel = 1;
+        let starsNeeded = 10;
+
+        while (stars >= starsNeeded) {
+            currentLevel++;
+            starsNeeded += 15;
+        }
+
+        return currentLevel;
+    };
+
+    // Função para recuperar a contagem de estrelas do sessionStorage
+    const getTotalStars = () => {
+        const stars = sessionStorage.getItem('totalStars');
+        return stars ? parseInt(stars, 10) : 0;
+    };
+
+    // Função para adicionar estrelas ao sessionStorage
+    const addStars = (stars) => {
+        const currentStars = getTotalStars();
+        const newTotal = currentStars + stars;
+        sessionStorage.setItem('totalStars', newTotal);
+        setTotalStars(newTotal); // Atualiza o estado local também
+    };
+    
+    // Função que roda ao montar o componente para atualizar totalStars e o nível
+    useEffect(() => {
+        const starsFromStorage = getTotalStars();
+        const currentLevel = calculateLevel(starsFromStorage);
+        setLevel(currentLevel);
+        setTimeRemaining(480 + (currentLevel - 1) * 30); // Ajusta o tempo inicial baseado no nível
+    }, []);
 
     useEffect(() => {
         // Escolhe 4 formas corretas aleatoriamente
@@ -83,19 +123,6 @@ const OneLevel = () => {
     // Função que embaralha um array de formas
     const shuffleShapes = (array) => {
         return array.sort(() => Math.random() - 0.5);
-    };
-
-    // Função que retorna o total de estrelas armazenadas no sessionStorage
-    const getTotalStars = () => {
-        const stars = sessionStorage.getItem('totalStars');
-        return stars ? parseInt(stars, 10) : 0;
-    };
-
-    // Função que adiciona estrelas ao total armazenado no sessionStorage
-    const addStars = (stars) => {
-        const currentStars = getTotalStars();
-        const newTotal = currentStars + stars;
-        sessionStorage.setItem('totalStars', newTotal);
     };
 
     // Função chamada quando o nível é finalizado, atualiza as estrelas e as salva
@@ -160,35 +187,61 @@ const OneLevel = () => {
         return calculatedStars;
     };
 
+    // Função para selecionar formas aleatórias sem repetições
+    const selectRandomShapes = (source, count) => {
+        if (source.length < count) {
+            console.error("O array fornecido não tem elementos suficientes para a seleção.");
+            return [];
+        }
+    
+        const selected = [];
+        const sourceCopy = [...source]; // Evita modificar o array original
+        while (selected.length < count && sourceCopy.length > 0) {
+            const index = Math.floor(Math.random() * sourceCopy.length);
+            selected.push(sourceCopy.splice(index, 1)[0]);
+        }
+        return selected;
+    };
+    
     // Função para reiniciar o nível
     const restartLevel = () => { 
-        setTimeRemaining(480);
+        setTimeRemaining(480 + (level - 1) * 30); // Ajusta o tempo baseado no nível
         setGameStatus('playing');
         setIsPaused(false);
         setSelectedShape(null);
         setStars(0);
         setHintsUsed(0);
-        setSelectedCorrectShapes([]);  // Reseta as formas corretas selecionadas
-        setSelectedIncorrectShapes([]); // Reseta as formas incorretas selecionadas
+        setSelectedCorrectShapes([]);
+        setSelectedIncorrectShapes([]);
+    
+        // Garante que há formas suficientes para a escolha
+        if (shapes.length < 4) {
+            console.error("Não há formas suficientes para selecionar 4 formas corretas!");
+            return;
+        }
 
-        // Escolhe novas 4 formas corretas aleatoriamente
-        const randomCorrectShapes = [];
-        while (randomCorrectShapes.length < 4) {
-            const shape = shapes[Math.floor(Math.random() * shapes.length)];
-            if (!randomCorrectShapes.includes(shape)) {
-                randomCorrectShapes.push(shape);  // Garante que as formas corretas sejam diferentes
+        // Seleciona 4 formas corretas aleatórias
+        const randomCorrectShapes = selectRandomShapes(shapes, 4);
+        setCorrectShapes(randomCorrectShapes);
+
+        // Garante que há formas suficientes para ambos os lados (8 formas cada)
+        const allShapes = [...new Set([...randomCorrectShapes, ...shapes])];
+        while (allShapes.length < 16) {
+            allShapes.push(...shapes);
+            if (allShapes.length > 16) {
+                allShapes.splice(16); // Garante exatamente 16 elementos
             }
         }
-        setCorrectShapes(randomCorrectShapes);  // Atualiza as formas corretas
-        
-        // Embaralha as formas ao reiniciar
-        const shuffledLeftShapes = shuffleShapes(shapes.slice()).slice(0, 8);
-        const shuffledRightShapes = shuffleShapes(shapes.slice()).slice(0, 8);
 
+        // Embaralha e divide as formas para os lados
+        const allShapesShuffled = shuffleShapes(allShapes); // Já ajustado para 16 elementos
+        const shuffledLeftShapes = allShapesShuffled.slice(0, 8);
+        const shuffledRightShapes = allShapesShuffled.slice(8, 16);
+        
         setLeftShapes(shuffledLeftShapes);
         setRightShapes(shuffledRightShapes);
     };
-
+    
     // Função que navega para o menu principal
     const goToMenu = () => {
         playSound(clickSound);
@@ -287,7 +340,6 @@ const OneLevel = () => {
             setTimeout(() => setShowHintLimitMessage(false), 3000);
         }
     };
-
 
     return (
         <div className="level-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
