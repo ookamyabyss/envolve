@@ -97,8 +97,22 @@ O jogo estará disponível no navegador, geralmente em http://localhost:3000.
 
 ![Envolve-S-3](./src/assets/screenshort/3.png)
 
+![Envolve-S-3-2](./src/assets/screenshort/3-2.png)
+
+![Envolve-S-3-3](./src/assets/screenshort/3-3.png)
+
 ![Envolve-S-4](./src/assets/screenshort/4.png)
 
 ![Envolve-S-5](./src/assets/screenshort/5.png)
 
 ![Envolve-S-6](./src/assets/screenshort/6.png)
+
+![Envolve-S-7](./src/assets/screenshort/7.png)
+
+![Envolve-S-8](./src/assets/screenshort/8.png)
+
+![Envolve-S-9](./src/assets/screenshort/9.png)
+
+![Envolve-S-10](./src/assets/screenshort/10.png)
+
+![Envolve-S-11](./src/assets/screenshort/11.png)
