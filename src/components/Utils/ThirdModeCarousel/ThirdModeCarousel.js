@@ -87,7 +87,7 @@ const ThirdModeCarousel = ({ currentStep, handleNext, handlePrevious }) => {
                 <div className="level-description">
                     <p> 5 MINUTOS </p>
                     <p> 8 FORMAS </p>
-                    <p> DESAPARECENDO </p>
+                    <p> EMBARALHANDO </p>
                     <div className="tips-count-2">2 DICAS</div>
                 </div>
             ),
@@ -98,7 +98,7 @@ const ThirdModeCarousel = ({ currentStep, handleNext, handlePrevious }) => {
                 <div className="level-description">
                     <p> 5 MINUTOS </p>
                     <p> 8 FORMAS </p>
-                    <p> DESAPARECENDO </p>
+                    <p> EMBARALHANDO </p>
                     <div className="tips-count-2">10 DICAS</div>
                 </div>
             ),
@@ -109,7 +109,7 @@ const ThirdModeCarousel = ({ currentStep, handleNext, handlePrevious }) => {
                 <div className="level-description">
                     <p> 5 MINUTOS </p>
                     <p> 8 FORMAS </p>
-                    <p> DESAPARECENDO </p>
+                    <p> EMBARALHANDO </p>
                     <div className="tips-count-2">10 DICAS</div>
                 </div>
             ),
